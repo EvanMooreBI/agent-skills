@@ -1,0 +1,12 @@
+{
+  "offset_arrow_clearance_mm": 2,
+  "frame": "compact-white",
+  "typography": "feature-labels-v18",
+  "annotation_placement": "dynamic",
+  "finished_linear_artwork_mm": 3,
+  "interior_text": "white-outline-shadow",
+  "text_weight": "regular",
+  "area_label_placement": "center",
+  "text_contrast": "balanced",
+  "terrain_text": "terrain-contrast"
+}

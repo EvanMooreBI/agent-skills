@@ -1,0 +1,10 @@
+{
+  "name": "wargame-design",
+  "displayName": "Wargame Design",
+  "version": "1.0.0",
+  "description": "Design playable miniature wargame scenarios and draw measured scenario maps.",
+  "author": { "name": "Evan Moore", "url": "https://github.com/EvanMooreBI" },
+  "repository": "https://github.com/EvanMooreBI/agent-skills",
+  "license": "MIT",
+  "keywords": ["wargaming", "scenario-design", "maps", "tabletop"]
+}

@@ -1,0 +1,30 @@
+{
+  "skill": "wargame-scenario-map-making",
+  "resources": [
+    {
+      "id": "map-fonts",
+      "purpose": "Regular and italic font files for map lettering. The standard uses Times New Roman.",
+      "required": false,
+      "whenMissing": "Use the system's installed Times New Roman. If it is not installed, use a metric-compatible open font such as Liberation Serif or Tinos, and tell the user which font was used.",
+      "howToObtain": "Times New Roman ships with Windows and macOS. Liberation Serif and Tinos are free under the SIL Open Font License.",
+      "expectedFiles": [
+        "*.ttf",
+        "*.otf"
+      ],
+      "license": "Times New Roman is licensed by Monotype. Not redistributable."
+    },
+    {
+      "id": "v32-reference-art",
+      "purpose": "A finished map drawn to the V32 standard, as PNG or PDF, for comparing artwork and composition at reference size.",
+      "required": false,
+      "whenMissing": "Work from the written standard in references/scenario-map-style.md, and ask the user to review the first render closely.",
+      "howToObtain": "Use a map you have already accepted as matching V32, or a PNG or PDF supplied by the skill author. Save it in this folder, or add a README.md that points to where it is kept.",
+      "expectedFiles": [
+        "*.png",
+        "*.pdf",
+        "README.md"
+      ],
+      "license": "Scenario-specific artwork. Not shipped with the skill."
+    }
+  ]
+}

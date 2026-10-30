@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wargame Scenario Designer"
+  short_description: "Create playable tabletop wargame scenarios"
+  default_prompt: "Use $wargame-scenario-designer to create a complete tabletop wargame scenario with OOBs, terrain, objectives, and special rules."

@@ -1,0 +1,23 @@
+{
+  "skill": "wargame-scenario-designer",
+  "resources": [
+    {
+      "id": "rules-quick-reference",
+      "purpose": "Quick-reference sheets or rule summaries for the rules system the scenario targets, so terms, ratings, and terrain effects match the rules exactly.",
+      "required": false,
+      "whenMissing": "Use only terminology the user supplies or that is confirmed in the user's own rules. Ask the user for any rules detail the scenario depends on instead of assuming it.",
+      "howToObtain": "Use the quick-reference sheet or rulebook you own for your rules system. Save a copy as a PDF or Markdown file.",
+      "expectedFiles": ["*.pdf", "*.md"],
+      "license": "Publisher copyright. Not redistributable."
+    },
+    {
+      "id": "design-articles",
+      "purpose": "Local copies of the articles listed in references/further-reading.md, for deeper reasoning on design choices.",
+      "required": false,
+      "whenMissing": "Use the adapted guidance in scenario-design-patterns.md and the article links in references/further-reading.md.",
+      "howToObtain": "Read the articles at their source URLs. Save personal copies only where the source allows it.",
+      "expectedFiles": ["*.md", "*.pdf", "*.html"],
+      "license": "Each article belongs to its author. Not redistributable."
+    }
+  ]
+}

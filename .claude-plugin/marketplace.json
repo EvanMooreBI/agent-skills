@@ -1,0 +1,20 @@
+{
+  "name": "evanmoorebi-agent-skills",
+  "description": "Agent skills for Claude Code and Codex: agent workflow and tabletop wargame design.",
+  "owner": {
+    "name": "Evan Moore",
+    "url": "https://github.com/EvanMooreBI"
+  },
+  "plugins": [
+    {
+      "name": "agent-workflow",
+      "source": "./plugins/agent-workflow",
+      "description": "Delegate work from Claude Code to Codex safely, and keep Codex plans as indexed Markdown files."
+    },
+    {
+      "name": "wargame-design",
+      "source": "./plugins/wargame-design",
+      "description": "Design playable miniature wargame scenarios and draw measured scenario maps."
+    }
+  ]
+}

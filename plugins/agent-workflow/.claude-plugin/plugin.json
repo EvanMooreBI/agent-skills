@@ -1,0 +1,10 @@
+{
+  "name": "agent-workflow",
+  "displayName": "Agent Workflow",
+  "version": "1.0.0",
+  "description": "Delegate work from Claude Code to Codex safely, and keep Codex plans as indexed Markdown files.",
+  "author": { "name": "Evan Moore", "url": "https://github.com/EvanMooreBI" },
+  "repository": "https://github.com/EvanMooreBI/agent-skills",
+  "license": "MIT",
+  "keywords": ["codex", "subagents", "orchestration", "planning"]
+}
