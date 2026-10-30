@@ -1,0 +1,8 @@
+{
+  "players": { "total": 8, "USA": 4, "CSA": 4 },
+  "matchup": { "id": "M1", "csaVariant": "twoCorps" },
+  "period": { "mode": "fixed", "value": "Mid War" },
+  "theater": { "mode": "fixed", "value": "Eastern" },
+  "year": 1863,
+  "includeCavalry": true
+}

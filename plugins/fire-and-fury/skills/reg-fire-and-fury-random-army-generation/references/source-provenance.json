@@ -1,0 +1,28 @@
+{
+  "snapshotDate": "2026-08-05",
+  "localArtifacts": [
+    { "file": "Fire and Fury Army Creation Tables.xlsx", "sha256": "61382D65135C6C9AC8DBC992247DF6F3D303BEA88618D7BF4B1084029F231273", "hashScope": "Raw binary file", "purpose": "Documented random army tables and modifiers" },
+    { "file": "Fire and Fury Label Generator.xlsx", "sha256": "72584A2E709749681FDA0AD555D3572A424307CDF89B6E6958F31DBE56C79EE7", "hashScope": "Raw binary file", "purpose": "Committed output template after contract update" },
+    { "file": "army-generation-rules.json", "sha256": "2AB65C3A17A58475BFF702F62D5E124F56BF14317DEA23AAD10FB58C960A66A5", "windowsCrlfSha256": "7C76848B7D728BD6539AA7CC3E2827145E6BA244099F27718ABE0DFC2D34E51F", "hashScope": "Canonical LF bytes; windowsCrlfSha256 covers a Git checkout with CRLF conversion", "purpose": "Normalized executable Tables 1-7 and effectiveness grid" }
+  ],
+  "historicalSources": [
+    "https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm",
+    "https://www.nps.gov/civilwar/search-regiments-detail.htm?battleUnitCode=UOH0008YAL",
+    "https://guides.loc.gov/civil-war-regimental-histories/print-resources",
+    "https://www.nps.gov/articles/from-regiment-to-president-the-structure-and-command-of-civil-war-armies.htm",
+    "https://www.nps.gov/apco/order-of-battle.htm",
+    "https://www.nps.gov/kemo/learn/historyculture/union-order-of-battle.htm",
+    "https://www.nps.gov/kemo/learn/historyculture/confederate-order-of-battle.htm",
+    "https://www.nps.gov/mana/learn/historyculture/union-order-of-battle-first-manassas.htm",
+    "https://www.nps.gov/mana/learn/historyculture/confederate-order-of-battle-first-manassas.htm",
+    "https://www.nps.gov/misp/learn/historyculture/order-of-battle-union.htm",
+    "https://www.nps.gov/misp/learn/historyculture/order-of-battle-confederate.htm",
+    "https://historicsites.nc.gov/all-sites/bentonville-battlefield/history/road-bentonville"
+  ],
+  "notes": [
+    "Fire and Fury references govern label content; ADLG sources are intentionally excluded.",
+    "Historical CSV rows retain side, role or arm, theatre, period, battle, year, URL, and historical status.",
+    "The single documented source-table gap is recorded in army-generation-rules.json sourceCorrections.",
+    "The two workbooks are not distributed. They are the optional local resource source-workbooks; army-generation-rules.json is the runtime source."
+  ]
+}

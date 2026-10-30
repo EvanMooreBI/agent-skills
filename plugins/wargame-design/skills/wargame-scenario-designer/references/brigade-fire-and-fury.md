@@ -13,7 +13,7 @@ Read this reference before drafting or editing a Brigade Fire and Fury 2nd Editi
 
 Use the full name **Brigade Fire and Fury 2nd Edition**, never its shorthand. Call reinforcements a **group** or **reinforcing group**, never a packet. Preserve historical names, OOB values, arrival turns, VP values, exceptional status, and source links unless a change is authorized.
 
-Default section order: Scale; The scenario; Terrain; Setup; Deployment; Reinforcements; Game length; Union order of battle; Confederate order of battle; Miniatures required; Victory conditions; Objective control; Rating and artillery notes; Sources. Match a supplied example's typography and retained sections. Never add a Project References section. Sources is the historical bibliography and must remain distinct from internal authoring references.
+Default section order: Scale; The scenario; Terrain; Setup; Deployment; Reinforcements; Game length; Union order of battle; Confederate order of battle; Stands required; Victory conditions; Objective control; Rating and artillery notes; Sources. Match a supplied example's typography and retained sections. Never add a Project References section. Sources is the historical bibliography and must remain distinct from internal authoring references.
 
 Use feet for overall table dimensions, such as **8 × 5 feet**. Use inches for supported on-table distances and dimensions. Use bold sentence lead-ins for explanatory paragraphs, such as **Union cavalry.** or **Greater Losses Victory Condition.** Bold only the subject and its terminal period, not the entire paragraph.
 
@@ -58,7 +58,7 @@ After the side's OOB, use these summary labels. Keep its existing composition an
 
 **Heavy Casualties:** {threshold}
 
-In Miniatures required, list gun stands with numeric side counts only. Do not add limbers as +N or include a second limber count; they are assumed markers. Preserve required infantry, mounted cavalry, dismounted cavalry, horseholder and leader counts without explaining their routine replacement mechanics.
+Build Stands required from [the stands required table template](fire-and-fury-stands-required.md) and its Brigade Fire and Fury 2nd Edition row order. Count gun stands in one Artillery row and never add limbers. Preserve required infantry, mounted cavalry, dismounted cavalry, horseholder and leader counts without explaining their routine replacement mechanics.
 
 ## Victory templates
 

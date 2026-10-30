@@ -1,0 +1,7 @@
+{
+  "players": { "total": 4, "USA": 2, "CSA": 2 },
+  "matchup": { "id": "M5" },
+  "period": { "mode": "random" },
+  "theater": { "mode": "random" },
+  "includeCavalry": false
+}

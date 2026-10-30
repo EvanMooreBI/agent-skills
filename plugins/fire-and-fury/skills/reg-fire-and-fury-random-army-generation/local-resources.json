@@ -1,0 +1,23 @@
+{
+  "skill": "reg-fire-and-fury-random-army-generation",
+  "resources": [
+    {
+      "id": "source-workbooks",
+      "purpose": "The two Excel workbooks that army-generation-rules.json was normalized from, kept for maintainers who change the rules data. The generator never reads them.",
+      "required": false,
+      "whenMissing": "Nothing changes for generation. tests/Test-ProtectedSources.ps1 skips the workbook hash checks.",
+      "howToObtain": "Maintainers only. Keep your own copies of 'Fire and Fury Army Creation Tables.xlsx' and 'Fire and Fury Label Generator.xlsx' in this folder.",
+      "expectedFiles": ["*.xlsx"],
+      "license": "Personal working files. Not distributed."
+    },
+    {
+      "id": "real-name-label-data",
+      "purpose": "A CSV of real unit and commander names that the PDF test suite uses to build two extra fixtures with historical names.",
+      "required": false,
+      "whenMissing": "The generator works as usual. tests/Test-PdfFixtures.ps1 skips the two real-name fixtures and runs the golden and synthetic ones.",
+      "howToObtain": "Maintainers only. Build a CSV with the columns Label_ID, Faction, Label_Type, Unit_Type, Commander and Unit_Name from your own order-of-battle research.",
+      "expectedFiles": ["*.csv"],
+      "license": "User data. Not distributed."
+    }
+  ]
+}

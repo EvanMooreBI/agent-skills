@@ -21,7 +21,7 @@ Produce complete, playable miniature wargaming scenarios with narrative context,
 4. Infer reasonable defaults from context and state assumptions explicitly.
 5. Read source/applicability, core principles, and relevant context in [the design patterns](scenario-design-patterns.md). Design the mission, OOB, terrain, deployment, victory conditions, asymmetry, special rules, and time structure. Check both sides' decisions, player participation, and objective feasibility.
 6. Research historical TO&E, specific units, geography, and named rules-system conventions when needed. Do not guess historical OOBs, equipment, terrain, or official game terminology.
-7. For Brigade Fire and Fury 2nd Edition, first read [its required reference and templates](references/brigade-fire-and-fury.md). For other systems, use `scenario-output-template.md`, adapting depth to scenario scale.
+7. For Brigade Fire and Fury 2nd Edition, first read [its required reference and templates](references/brigade-fire-and-fury.md). For other systems, use `scenario-output-template.md`, adapting depth to scenario scale. Every Brigade Fire and Fury 2nd Edition and Regimental Fire and Fury scenario includes a Stands required table built from [its template](references/fire-and-fury-stands-required.md).
 8. Run `design-checklist.md` before delivering and fix issues found.
 
 For the full phase-by-phase process, context-specific guidance, system adaptation rules, and anti-pattern table, read `references/scenario-workflow.md`.
@@ -33,6 +33,7 @@ Read only the files needed for the task:
 Map appearance follows the V32 map standard in the `wargame-scenario-map-making` skill, including terrain, labels, frame, north arrow and dimension logic. That skill applies the presentation without changing geography or native rules.
 
 - `references/brigade-fire-and-fury.md`: mandatory Brigade Fire and Fury 2nd Edition presentation, OOB/victory templates, map prerequisite, footer and redundancy rules. These override conflicting generic instructions for that system.
+- `references/fire-and-fury-stands-required.md`: mandatory Stands required table for Brigade Fire and Fury 2nd Edition and Regimental Fire and Fury, with row rules and row order for each system.
 - `references/scenario-workflow.md`: detailed workflow, context-specific guidance, rules-system adaptation, presentation matching, and anti-patterns.
 - `scenario-design-patterns.md`: design theory, scale and period guidance, terrain density, solo AI options, and rules-of-thumb.
 - `references/further-reading.md`: the source articles behind the design guidance, with links. Their preferences and period examples are not universal requirements.
@@ -67,7 +68,7 @@ When the user names a rules system, use that system's official terminology, acti
 Use these primary examples when relevant:
 
 - Brigade Fire and Fury 2nd Edition: `references/brigade-fire-and-fury.md` before the generic template or period examples.
-- Regimental Fire and Fury: `scenario-examples/acw-regimental_fire-and-fury_official.md`
+- Regimental Fire and Fury: `scenario-examples/acw-regimental_fire-and-fury_official.md`, plus `references/fire-and-fury-stands-required.md` for the Stands required table
 - FOW, NAM, Team Yankee, Checkpoint Charlie, Fate of a Nation: relevant `scenario-examples/wwii-company_flames-of-war_*.md`
 - Fireball Forward: `scenario-examples/wwii-company_fireball-forward_official.md`
 - Battlefront WWII: `scenario-examples/wwii-battalion_battlefront-wwii_unofficial.md`

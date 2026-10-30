@@ -1,0 +1,51 @@
+{
+  "theatre": "Eastern",
+  "period": "Mid War",
+  "mountainHowitzerEligible": false,
+  "forces": {
+    "USA": {
+      "division": {
+        "name": "A & B <Reserve>",
+        "commander": "Division Parent",
+        "talent": "Gallant"
+      },
+      "brigades": [
+        {
+          "type": "Infantry",
+          "commander": "Ricketts",
+          "name": "A <B> & C",
+          "regimentNames": [
+            "iiiiiiiiiiii",
+            "WWWWWWWWWWWW",
+            "MMMMMMMM"
+          ],
+          "regimentCommanders": []
+        },
+        {
+          "type": "Cavalry",
+          "commander": "Hatch",
+          "regimentNames": [
+            "Apostrophe's Mounted Regiment"
+          ],
+          "regimentCommanders": []
+        }
+      ],
+      "independent": {
+        "infantry": 0,
+        "cavalry": 0,
+        "artillery": 0,
+        "unitNames": [],
+        "unitCommanders": []
+      },
+      "divisionArtillery": {
+        "commander": "Artillery Parent",
+        "batteryNames": [
+          "Extraordinarily Wide Battery & Section <A>"
+        ],
+        "batteryCommanders": [
+          "Commander With An Exceptionally Long Surname"
+        ]
+      }
+    }
+  }
+}

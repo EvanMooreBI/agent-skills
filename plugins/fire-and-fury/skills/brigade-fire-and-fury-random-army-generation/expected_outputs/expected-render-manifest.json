@@ -1,0 +1,18 @@
+{
+  "pageCount": "positive integer with pages for both sides",
+  "rendererVersion": "version copied from assets/Code.gs",
+  "rendererMode": "local-24mm-by-25mm",
+  "textFittingMode": "browser-measured-shrink-only",
+  "labelWidthPt": 68.03149606299213,
+  "labelHeightPt": 70.86614173228347,
+  "labelWidthMm": 24,
+  "labelHeightMm": 25,
+  "dividerYPt": 19.84251968503937,
+  "textRowBaselineGapPt": 14,
+  "lowerTextTopPaddingPt": 5,
+  "lowerTextBottomPaddingPt": 5,
+  "lowerTextUsageLimit": 0.9,
+  "lowerTextUsableHeightPt": 41.023622047244096,
+  "labelCount": "positive integer",
+  "standaloneArtilleryCount": "non-negative integer"
+}

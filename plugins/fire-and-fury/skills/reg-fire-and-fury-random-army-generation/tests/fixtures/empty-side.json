@@ -1,0 +1,43 @@
+{
+  "theatre": "Eastern",
+  "period": "Mid War",
+  "mountainHowitzerEligible": false,
+  "forces": {
+    "USA": {
+      "division": {},
+      "brigades": [],
+      "independent": {
+        "infantry": 0,
+        "cavalry": 0,
+        "artillery": 0,
+        "unitNames": [],
+        "unitCommanders": []
+      },
+      "divisionArtillery": {
+        "batteryNames": [],
+        "batteryCommanders": []
+      }
+    },
+    "CSA": {
+      "division": {},
+      "brigades": [
+        {
+          "type": "Infantry",
+          "regimentNames": [],
+          "regimentCommanders": []
+        }
+      ],
+      "independent": {
+        "infantry": 0,
+        "cavalry": 0,
+        "artillery": 0,
+        "unitNames": [],
+        "unitCommanders": []
+      },
+      "divisionArtillery": {
+        "batteryNames": [],
+        "batteryCommanders": []
+      }
+    }
+  }
+}

@@ -25,6 +25,57 @@ jobs:
         run: python -m unittest discover -s plugins/agent-workflow/skills/codex-plan-files/scripts
       - name: Test map presentation validator
         run: python -m unittest discover -s plugins/wargame-design/skills/wargame-scenario-map-making/assets/v32 -p test_presentation.py
+      - name: Test Brigade Fire and Fury rules (invented tables)
+        shell: pwsh
+        working-directory: plugins/fire-and-fury/skills/brigade-fire-and-fury-random-army-generation
+        run: |
+          ./tests/Test-Rules.ps1
+          node tests/test-layout.js
+      - name: Test Regimental Fire and Fury rules
+        shell: pwsh
+        working-directory: plugins/fire-and-fury/skills/reg-fire-and-fury-random-army-generation
+        run: |
+          ./tests/Test-Rules.ps1
+          ./tests/Test-ProtectedSources.ps1
+          node tests/test-renderer.js
+
+  # The label PDFs are checked on Windows, where the suites were developed and verified.
+  fire-and-fury-pdf:
+    runs-on: windows-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install PyMuPDF
+        run: python -m pip install --quiet pymupdf
+      - name: Brigade label PDFs
+        shell: pwsh
+        working-directory: plugins/fire-and-fury/skills/brigade-fire-and-fury-random-army-generation
+        run: |
+          ./tests/Test-Renderer.ps1
+          ./tests/Test-EndToEnd.ps1
+          ./tests/Test-TextFitting.ps1
+          $qa = Join-Path $env:RUNNER_TEMP 'bff-qa'
+          ./tests/Test-PdfFixtures.ps1 -OutputDirectory $qa
+          python -B tests/test-validation.py (Join-Path $qa 'mixed-unassigned') (Join-Path $env:RUNNER_TEMP 'bff-negative')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Regimental label PDFs
+        shell: pwsh
+        working-directory: plugins/fire-and-fury/skills/reg-fire-and-fury-random-army-generation
+        run: |
+          $suite = Join-Path $env:RUNNER_TEMP 'rff-suite'
+          ./tests/Test-PdfFixtures.ps1 -OutputDirectory $suite
+          ./tests/Test-LargeArmies.ps1 -OutputDirectory (Join-Path $env:RUNNER_TEMP 'rff-large')
+          python -B tests/test-validation.py (Join-Path $suite 'text-fitting') (Join-Path $env:RUNNER_TEMP 'rff-negative')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -B tests/test-layout-validation.py $suite (Join-Path $env:RUNNER_TEMP 'rff-layout-negative')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          ./tests/Test-EndToEnd.ps1 -OutputDirectory (Join-Path $env:RUNNER_TEMP 'rff-e2e')
 
   package:
     runs-on: ubuntu-latest

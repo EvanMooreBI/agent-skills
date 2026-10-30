@@ -1,0 +1,193 @@
+unit_type,period,side,modified_roll,experience_rating
+Infantry,Early War,USA,-1,Green
+Infantry,Early War,USA,0,Green
+Infantry,Early War,USA,1,Green
+Infantry,Early War,USA,2,Green
+Infantry,Early War,USA,3,Experienced
+Infantry,Early War,USA,4,Experienced
+Infantry,Early War,USA,5,Experienced
+Infantry,Early War,USA,6,Experienced
+Infantry,Early War,USA,7,Veteran
+Infantry,Early War,USA,8,Veteran
+Infantry,Early War,USA,9,Veteran
+Infantry,Early War,USA,10,Crack
+Infantry,Early War,CSA,-1,Green
+Infantry,Early War,CSA,0,Green
+Infantry,Early War,CSA,1,Green
+Infantry,Early War,CSA,2,Experienced
+Infantry,Early War,CSA,3,Experienced
+Infantry,Early War,CSA,4,Experienced
+Infantry,Early War,CSA,5,Experienced
+Infantry,Early War,CSA,6,Veteran
+Infantry,Early War,CSA,7,Veteran
+Infantry,Early War,CSA,8,Veteran
+Infantry,Early War,CSA,9,Crack
+Infantry,Early War,CSA,10,Crack
+Infantry,Mid-War,USA,-1,Green
+Infantry,Mid-War,USA,0,Green
+Infantry,Mid-War,USA,1,Green
+Infantry,Mid-War,USA,2,Experienced
+Infantry,Mid-War,USA,3,Experienced
+Infantry,Mid-War,USA,4,Experienced
+Infantry,Mid-War,USA,5,Experienced
+Infantry,Mid-War,USA,6,Veteran
+Infantry,Mid-War,USA,7,Veteran
+Infantry,Mid-War,USA,8,Veteran
+Infantry,Mid-War,USA,9,Crack
+Infantry,Mid-War,USA,10,Crack
+Infantry,Mid-War,CSA,-1,Green
+Infantry,Mid-War,CSA,0,Green
+Infantry,Mid-War,CSA,1,Green
+Infantry,Mid-War,CSA,2,Experienced
+Infantry,Mid-War,CSA,3,Experienced
+Infantry,Mid-War,CSA,4,Experienced
+Infantry,Mid-War,CSA,5,Veteran
+Infantry,Mid-War,CSA,6,Veteran
+Infantry,Mid-War,CSA,7,Veteran
+Infantry,Mid-War,CSA,8,Crack
+Infantry,Mid-War,CSA,9,Crack
+Infantry,Mid-War,CSA,10,Crack
+Infantry,Late War,USA,-1,Green
+Infantry,Late War,USA,0,Green
+Infantry,Late War,USA,1,Green
+Infantry,Late War,USA,2,Experienced
+Infantry,Late War,USA,3,Experienced
+Infantry,Late War,USA,4,Experienced
+Infantry,Late War,USA,5,Veteran
+Infantry,Late War,USA,6,Veteran
+Infantry,Late War,USA,7,Veteran
+Infantry,Late War,USA,8,Crack
+Infantry,Late War,USA,9,Crack
+Infantry,Late War,USA,10,Crack
+Infantry,Late War,CSA,-1,Green
+Infantry,Late War,CSA,0,Experienced
+Infantry,Late War,CSA,1,Green
+Infantry,Late War,CSA,2,Experienced
+Infantry,Late War,CSA,3,Experienced
+Infantry,Late War,CSA,4,Veteran
+Infantry,Late War,CSA,5,Veteran
+Infantry,Late War,CSA,6,Veteran
+Infantry,Late War,CSA,7,Crack
+Infantry,Late War,CSA,8,Crack
+Infantry,Late War,CSA,9,Crack
+Infantry,Late War,CSA,10,Crack
+Cavalry,Early War,USA,1,Green
+Cavalry,Early War,USA,2,Green
+Cavalry,Early War,USA,3,Experienced
+Cavalry,Early War,USA,4,Experienced
+Cavalry,Early War,USA,5,Experienced
+Cavalry,Early War,USA,6,Experienced
+Cavalry,Early War,USA,7,Veteran
+Cavalry,Early War,USA,8,Veteran
+Cavalry,Early War,USA,9,Veteran
+Cavalry,Early War,USA,10,Crack
+Cavalry,Early War,CSA,1,Green
+Cavalry,Early War,CSA,2,Experienced
+Cavalry,Early War,CSA,3,Experienced
+Cavalry,Early War,CSA,4,Experienced
+Cavalry,Early War,CSA,5,Experienced
+Cavalry,Early War,CSA,6,Veteran
+Cavalry,Early War,CSA,7,Veteran
+Cavalry,Early War,CSA,8,Veteran
+Cavalry,Early War,CSA,9,Crack
+Cavalry,Early War,CSA,10,Crack
+Cavalry,Mid-War,USA,1,Green
+Cavalry,Mid-War,USA,2,Experienced
+Cavalry,Mid-War,USA,3,Experienced
+Cavalry,Mid-War,USA,4,Experienced
+Cavalry,Mid-War,USA,5,Experienced
+Cavalry,Mid-War,USA,6,Veteran
+Cavalry,Mid-War,USA,7,Veteran
+Cavalry,Mid-War,USA,8,Veteran
+Cavalry,Mid-War,USA,9,Crack
+Cavalry,Mid-War,USA,10,Crack
+Cavalry,Mid-War,CSA,1,Green
+Cavalry,Mid-War,CSA,2,Experienced
+Cavalry,Mid-War,CSA,3,Experienced
+Cavalry,Mid-War,CSA,4,Experienced
+Cavalry,Mid-War,CSA,5,Veteran
+Cavalry,Mid-War,CSA,6,Veteran
+Cavalry,Mid-War,CSA,7,Veteran
+Cavalry,Mid-War,CSA,8,Crack
+Cavalry,Mid-War,CSA,9,Crack
+Cavalry,Mid-War,CSA,10,Crack
+Cavalry,Late War,USA,1,Green
+Cavalry,Late War,USA,2,Experienced
+Cavalry,Late War,USA,3,Experienced
+Cavalry,Late War,USA,4,Experienced
+Cavalry,Late War,USA,5,Veteran
+Cavalry,Late War,USA,6,Veteran
+Cavalry,Late War,USA,7,Veteran
+Cavalry,Late War,USA,8,Crack
+Cavalry,Late War,USA,9,Crack
+Cavalry,Late War,USA,10,Crack
+Cavalry,Late War,CSA,1,Green
+Cavalry,Late War,CSA,2,Experienced
+Cavalry,Late War,CSA,3,Experienced
+Cavalry,Late War,CSA,4,Veteran
+Cavalry,Late War,CSA,5,Veteran
+Cavalry,Late War,CSA,6,Veteran
+Cavalry,Late War,CSA,7,Crack
+Cavalry,Late War,CSA,8,Crack
+Cavalry,Late War,CSA,9,Crack
+Cavalry,Late War,CSA,10,Crack
+Artillery,Early War,USA,1,Green
+Artillery,Early War,USA,2,Green
+Artillery,Early War,USA,3,Experienced
+Artillery,Early War,USA,4,Experienced
+Artillery,Early War,USA,5,Experienced
+Artillery,Early War,USA,6,Experienced
+Artillery,Early War,USA,7,Veteran
+Artillery,Early War,USA,8,Veteran
+Artillery,Early War,USA,9,Veteran
+Artillery,Early War,USA,10,Crack
+Artillery,Early War,CSA,1,Green
+Artillery,Early War,CSA,2,Experienced
+Artillery,Early War,CSA,3,Experienced
+Artillery,Early War,CSA,4,Experienced
+Artillery,Early War,CSA,5,Experienced
+Artillery,Early War,CSA,6,Veteran
+Artillery,Early War,CSA,7,Veteran
+Artillery,Early War,CSA,8,Veteran
+Artillery,Early War,CSA,9,Crack
+Artillery,Early War,CSA,10,Crack
+Artillery,Mid-War,USA,1,Green
+Artillery,Mid-War,USA,2,Experienced
+Artillery,Mid-War,USA,3,Experienced
+Artillery,Mid-War,USA,4,Experienced
+Artillery,Mid-War,USA,5,Experienced
+Artillery,Mid-War,USA,6,Veteran
+Artillery,Mid-War,USA,7,Veteran
+Artillery,Mid-War,USA,8,Veteran
+Artillery,Mid-War,USA,9,Crack
+Artillery,Mid-War,USA,10,Crack
+Artillery,Mid-War,CSA,1,Green
+Artillery,Mid-War,CSA,2,Experienced
+Artillery,Mid-War,CSA,3,Experienced
+Artillery,Mid-War,CSA,4,Experienced
+Artillery,Mid-War,CSA,5,Veteran
+Artillery,Mid-War,CSA,6,Veteran
+Artillery,Mid-War,CSA,7,Veteran
+Artillery,Mid-War,CSA,8,Crack
+Artillery,Mid-War,CSA,9,Crack
+Artillery,Mid-War,CSA,10,Crack
+Artillery,Late War,USA,1,Green
+Artillery,Late War,USA,2,Experienced
+Artillery,Late War,USA,3,Experienced
+Artillery,Late War,USA,4,Experienced
+Artillery,Late War,USA,5,Veteran
+Artillery,Late War,USA,6,Veteran
+Artillery,Late War,USA,7,Veteran
+Artillery,Late War,USA,8,Crack
+Artillery,Late War,USA,9,Crack
+Artillery,Late War,USA,10,Crack
+Artillery,Late War,CSA,1,Green
+Artillery,Late War,CSA,2,Experienced
+Artillery,Late War,CSA,3,Experienced
+Artillery,Late War,CSA,4,Veteran
+Artillery,Late War,CSA,5,Veteran
+Artillery,Late War,CSA,6,Veteran
+Artillery,Late War,CSA,7,Crack
+Artillery,Late War,CSA,8,Crack
+Artillery,Late War,CSA,9,Crack
+Artillery,Late War,CSA,10,Crack

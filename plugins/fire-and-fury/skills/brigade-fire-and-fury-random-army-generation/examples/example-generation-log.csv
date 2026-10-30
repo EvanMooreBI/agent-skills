@@ -1,0 +1,4 @@
+Sequence,RecordType,Step,Side,FormationId,UnitId,RawRoll,Modifiers,AdjustedRoll,Result,Substitution,SourceTable,Notes
+1,Configuration,2,,,,,User selection,,Mid War,,request.json,
+2,Roll,3A,USA,USA-D1,,7,,7,3 brigades,,03_brigades_per_division.csv,
+3,BalanceDecision,Review,,,,,,,No adjustment applied: balance rules not yet approved.,Deferred improvement,balance-policy.md,

@@ -124,6 +124,8 @@ For Brigade Fire and Fury 2nd Edition, use [the system reference and templates](
 
 **Always name specific equipment** - not "a tank" but "Panzer IV H." Consult `oob-equipment-conventions.md` for scale-appropriate specificity levels and period-specific reference files, and follow the formatting in `scenario-output-template.md` (Section 4: Forces).
 
+For Brigade Fire and Fury 2nd Edition and Regimental Fire and Fury, also include the Stands required table from [its template](fire-and-fury-stands-required.md).
+
 #### Terrain Description
 
 For Brigade Fire and Fury 2nd Edition, the system reference's map prerequisite governs: an unfinished map requires a handoff and sourced relative descriptions; a completed map permits supported edge measurements without x/y coordinates. The following text-only layout conventions apply to other systems:
@@ -223,7 +225,7 @@ For Brigade Fire and Fury 2nd Edition, use [the required reference](brigade-fire
 
 | Rules System | Example File | Priority | What It Teaches |
 |---|---|---|---|
-| **Regimental Fire and Fury** | `acw-regimental_fire-and-fury_official.md` | **Mandatory** | Hierarchical label tree OOB, weapon codes, footnote deployment, asymmetric starting conditions |
+| **Regimental Fire and Fury** | `acw-regimental_fire-and-fury_official.md` | **Mandatory** | Hierarchical label tree OOB, weapon codes, footnote deployment, asymmetric starting conditions, Stands required table |
 | **FOW, NAM, Team Yankee, Checkpoint Charlie, Fate of a Nation** | `wwii-company_flames-of-war_official-standard-missions.md` (standard) or `wwii-company_flames-of-war_official-historical.md` (historical) | **Mandatory** | Deployment diagrams (inch/cm), reserve mechanics, two-column OOB, Skill/Motivation ratings |
 | **FOW (supplement scenarios)** | `wwii-company_flames-of-war_official-special-mission.md` | Official | Bridge between standard missions and full historical scenarios |
 | **Fireball Forward** | `wwii-company_fireball-forward_official.md` | Official | Compact 2-page format, VP by unit type, variable forces, pre-game commitment |

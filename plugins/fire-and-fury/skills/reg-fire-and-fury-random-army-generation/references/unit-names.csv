@@ -1,0 +1,40 @@
+Side,Designation,Arm,Theatre,Period,Battle,Year,SourceUrl,Historical
+USA,1st Minnesota,Infantry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,20th Maine,Infantry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,24th Michigan,Infantry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,69th Pennsylvania,Infantry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,14th Brooklyn,Infantry,Eastern,Early War,First Manassas,1861,https://www.nps.gov/mana/learn/historyculture/union-order-of-battle-first-manassas.htm,TRUE
+USA,8th Ohio,Infantry,Eastern,All,Army of the Potomac,1862-1864,https://www.nps.gov/civilwar/search-regiments-detail.htm?battleUnitCode=UOH0008YAL,TRUE
+USA,2nd Wisconsin,Infantry,Eastern,Early War,First Manassas,1861,https://www.nps.gov/mana/learn/historyculture/union-order-of-battle-first-manassas.htm,TRUE
+USA,4th Kentucky,Infantry,Western,Early War,Mill Springs,1862,https://www.nps.gov/misp/learn/historyculture/order-of-battle-union.htm,TRUE
+USA,2nd Minnesota,Infantry,Western,Early War,Mill Springs,1862,https://www.nps.gov/misp/learn/historyculture/order-of-battle-union.htm,TRUE
+USA,10th Indiana,Infantry,Western,Early War,Mill Springs,1862,https://www.nps.gov/misp/learn/historyculture/order-of-battle-union.htm,TRUE
+USA,125th Ohio,Infantry,Western,Mid War|Late War,Kennesaw Mountain,1864,https://www.nps.gov/kemo/learn/historyculture/union-order-of-battle.htm,TRUE
+USA,14th Ohio,Infantry,Western,Late War,Kennesaw Mountain,1864,https://www.nps.gov/kemo/learn/historyculture/union-order-of-battle.htm,TRUE
+USA,15th New York Cavalry,Cavalry,Eastern,Late War,Appomattox,1865,https://www.nps.gov/apco/order-of-battle.htm,TRUE
+USA,1st Maine Cavalry,Cavalry,Eastern,Late War,Appomattox,1865,https://www.nps.gov/apco/order-of-battle.htm,TRUE
+USA,8th Illinois Cavalry,Cavalry,Both,All,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,6th Pennsylvania Cavalry,Cavalry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,Battery B 4th U.S. Artillery,Artillery,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,Battery I 1st U.S. Artillery,Artillery,Eastern,Late War,Appomattox,1865,https://www.nps.gov/apco/order-of-battle.htm,TRUE
+USA,Battery H 5th U.S. Artillery,Artillery,Both,All,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,1st Ohio Light Artillery Battery C,Artillery,Western,All,Kennesaw Mountain,1864,https://www.nps.gov/kemo/learn/historyculture/union-order-of-battle.htm,TRUE
+CSA,1st Texas,Infantry,Eastern,All,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,4th Texas,Infantry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,15th Alabama,Infantry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,26th North Carolina,Infantry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,4th Virginia,Infantry,Eastern,Early War,First Manassas,1861,https://www.nps.gov/mana/learn/historyculture/confederate-order-of-battle-first-manassas.htm,TRUE
+CSA,5th Virginia,Infantry,Eastern,Early War,First Manassas,1861,https://www.nps.gov/mana/learn/historyculture/confederate-order-of-battle-first-manassas.htm,TRUE
+CSA,15th Mississippi,Infantry,Western,Early War,Mill Springs,1862,https://www.nps.gov/misp/learn/historyculture/order-of-battle-confederate.htm,TRUE
+CSA,20th Tennessee,Infantry,Western,Early War,Mill Springs,1862,https://www.nps.gov/misp/learn/historyculture/order-of-battle-confederate.htm,TRUE
+CSA,1st Arkansas,Infantry,Western,Early War,Mill Springs,1862,https://www.nps.gov/misp/learn/historyculture/order-of-battle-confederate.htm,TRUE
+CSA,10th South Carolina,Infantry,Western,Mid War|Late War,Bentonville,1865,https://historicsites.nc.gov/all-sites/bentonville-battlefield/history/road-bentonville,TRUE
+CSA,24th South Carolina,Infantry,Western,Late War,Bentonville,1865,https://historicsites.nc.gov/all-sites/bentonville-battlefield/history/road-bentonville,TRUE
+CSA,1st Virginia Cavalry,Cavalry,Eastern,All,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,7th Virginia Cavalry,Cavalry,Eastern,Late War,Appomattox,1865,https://www.nps.gov/apco/order-of-battle.htm,TRUE
+CSA,1st North Carolina Cavalry,Cavalry,Both,All,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,3rd Arkansas Cavalry,Cavalry,Western,Late War,Bentonville,1865,https://historicsites.nc.gov/all-sites/bentonville-battlefield/history/road-bentonville,TRUE
+CSA,Washington Artillery 1st Company,Artillery,Eastern,All,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,Parker's Virginia Battery,Artillery,Eastern,Late War,Appomattox,1865,https://www.nps.gov/apco/order-of-battle.htm,TRUE
+CSA,Cherokee Artillery,Artillery,Western,All,Kennesaw Mountain,1864,https://www.nps.gov/kemo/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,Jeff Davis Artillery,Artillery,Both,All,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/confederate-order-of-battle.htm,TRUE

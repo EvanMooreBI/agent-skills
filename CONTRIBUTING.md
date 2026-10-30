@@ -51,10 +51,13 @@ pwsh ./scripts/Build-SkillZips.ps1
 claude plugin validate .
 ```
 
+The Fire and Fury skills list their own test commands in each skill's `README.md`. Their tests use invented generator tables, so they run without the rulebook.
+
 `validate_repo.py` rejects:
 
 - PDFs, fonts, archives and office documents;
 - files over 2 MB;
+- paths longer than 150 characters, which can break clones on Windows;
 - broken relative links;
 - personal paths;
 - secret files such as `.env`;

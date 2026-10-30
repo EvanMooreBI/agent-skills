@@ -15,6 +15,11 @@
       "name": "wargame-design",
       "source": "./plugins/wargame-design",
       "description": "Design playable miniature wargame scenarios and draw measured scenario maps."
+    },
+    {
+      "name": "fire-and-fury",
+      "source": "./plugins/fire-and-fury",
+      "description": "Generate random Brigade and Regimental Fire and Fury armies with printable unit-label PDFs and auditable roll logs."
     }
   ]
 }
