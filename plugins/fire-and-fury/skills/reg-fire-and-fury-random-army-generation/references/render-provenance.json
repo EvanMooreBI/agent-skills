@@ -1,0 +1,33 @@
+{
+  "baselineCommit": "5933b12",
+  "generationPrefixLfSha256": "99d7cfc3a886289eae58671f1d450f03f0074e7e3594c486d623a54412b7c329",
+  "protectedReferences": {
+    "references/army-generation-rules.json": "2ab65c3a17a58475bff702f62d5e124f56bf14317dea23aad10fb58c960a66a5",
+    "references/commander-names.csv": "b1ab0bfa6578936b1ed9b5cc968d003d4b817050e2f3ba95f3c20c6099131504",
+    "references/request-schema.json": "f2ed2cf9b633ad9bbc0d742b205b72387057056b667526b0f373f7bff9c6f520",
+    "references/source-provenance.json": "4f384b5c18e00702249d068752ba1c415b26e0eb012bf80a129051233f4802cc",
+    "references/unit-names.csv": "e167c82a808d90db2bc07096d508d0fd605bdc1f1b0559bab30138d30e9ee74f"
+  },
+  "localReferences": {
+    "source-workbooks/Fire and Fury Army Creation Tables.xlsx": "61382d65135c6c9ac8dbc992247df6f3d303bea88618d7bf4b1084029f231273",
+    "source-workbooks/Fire and Fury Label Generator.xlsx": "72584a2e709749681fda0ad555d3572a424307cdf89b6e6958f31dbe56c79ee7"
+  },
+  "brigadeTechnicalReference": {
+    "scripts/render-labels.js": "e82a3082db69ef2c876889c379a6523f43f345a09aaa3d57ff390af81ab21360",
+    "scripts/Generate-BrigadeFireAndFuryLabels.ps1": "10528c9df08b1f902a7d12482c19ce299a0fd5c7362b8fd602a78ca39fc50ee1",
+    "scripts/validate_pdf.py": "69d34dcf0210525321bd5238b237ba9840977870b8e79afe25d8680b95606f13",
+    "scripts/formation-layout.js": "4e49fcff247aad71b4f64e723e39ef060844641e23031525dbbd828db5a26466"
+  },
+  "notes": [
+    "Local port of Brigade rendering and transactional delivery, with Regimental-only adapters.",
+    "Both local renderers use 24 x 25 mm labels. Four-row text and Brave Colonel markers remain Regimental adaptations.",
+    "Source spreadsheets remain historical references and are not runtime templates.",
+    "brigadeTechnicalReferenceAtPort preserves the original port hashes; brigadeTechnicalReference verifies the approved current technical files.",
+    "Hashes cover LF line endings for text files, so Windows and Unix checkouts agree. localReferences are checked only where the optional source-workbooks resource exists."
+  ],
+  "brigadeTechnicalReferenceAtPort": {
+    "scripts/render-labels.js": "320efe89864da3feebe4d76cf4104e63986d55839c522d7a279277b4f92a84e0",
+    "scripts/Generate-BrigadeFireAndFuryLabels.ps1": "ee23c46ebf27abc4ec2318d4d43cee47cf15e2075180f920c9f353adba22c8b4",
+    "scripts/validate_pdf.py": "dae49d69d2b19aa44eeb9ee830258475457625d1afb38cd6fc5cdb53cfe00dab"
+  }
+}

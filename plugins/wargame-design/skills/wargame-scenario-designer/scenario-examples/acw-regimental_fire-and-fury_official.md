@@ -11,7 +11,7 @@ This file describes the layout of the publisher's scenarios in original words. I
 A scenario usually runs to several pages, in this order:
 
 1. Title page with an overview, historical context, and a terrain photo.
-2. Terrain rules, a stand-count summary, and a deployment map with every unit placed.
+2. Terrain rules, the Stands required table, and a deployment map with every unit placed.
 3. The Union order of battle as a label tree.
 4. The Confederate order of battle as a label tree.
 5. Victory conditions and special scenario rules.
@@ -42,9 +42,9 @@ Vet 10/8/6 RM
 
 Lowercase letters on labels point to deployment notes, such as "starts limbered in reserve" or "enters on turn 3". Footnotes keep labels short while still covering complex starting conditions.
 
-## Stand-count summary
+## Stands required
 
-A table at the top of the OOB lists stands by type for each side: infantry, infantry command, mounted and dismounted cavalry, artillery with limbers, and each leader tier, with totals. It tells players how many figures to bring. Calculate the counts from your own OOB.
+A table at the top of the OOB lists stands by type for each side, with totals. It tells players how many figures to bring. Build it from [the stands required template](../references/fire-and-fury-stands-required.md), which sets the rows and their order, counts guns without limbers, and drops rows neither side uses. Calculate the counts from your own OOB.
 
 ## Deployment map
 
@@ -68,6 +68,6 @@ Keep them few, and tie each one to the history. Typical subjects are an opening 
 - Weapon codes convey equipment without long descriptions.
 - Footnotes handle complex deployment without cluttering labels.
 - Asymmetric starting states create tension through status rather than force size.
-- The stand-count table is the players' shopping list.
+- The Stands required table is the players' shopping list.
 - Several independent victory conditions create layered decisions.
 - Named terrain on the map makes deployment text precise.

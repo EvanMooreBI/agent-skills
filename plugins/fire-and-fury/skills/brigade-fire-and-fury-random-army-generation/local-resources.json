@@ -1,0 +1,25 @@
+{
+  "skill": "brigade-fire-and-fury-random-army-generation",
+  "resources": [
+    {
+      "id": "generator-tables",
+      "purpose": "The d10 tables from the rulebook's Fictional Army Generator for Pick-up Games: force matchups, period and theater, brigades and batteries per division, exceptional leaders, brigade strength, experience, morale bands, and weapons. Random armies roll on these tables.",
+      "required": true,
+      "whenMissing": "Random-army generation stops and names the folders it checked. Fixed-roster labels still work, because they need only the bundled effectiveness table.",
+      "howToObtain": "Photograph or scan the Fictional Army Generator pages in your own copy of Brigade Fire and Fury 2nd Edition. The agent reads the photos and fills the templates in assets/table-templates, then checks them with scripts/Test-BrigadeTables.ps1.",
+      "expectedFiles": [
+        "01_force_balance_matchups.csv",
+        "02_time_period_rolls.csv",
+        "02_theater_rolls.csv",
+        "03_brigades_per_division.csv",
+        "03_batteries_per_division.csv",
+        "04_exceptional_leader_rolls.csv",
+        "05_brigade_strength.csv",
+        "06_experience_rating.csv",
+        "07_morale_rating_ranges.csv",
+        "08_weapon_type.csv"
+      ],
+      "license": "Publisher copyright. Not redistributable."
+    }
+  ]
+}

@@ -2,8 +2,9 @@
 """Check this repository before release.
 
 Checks skill frontmatter against the Agent Skills spec, plugin and marketplace
-manifests, local-resource manifests, relative Markdown links, file types and
-sizes, and markers of personal or third-party material that must not ship.
+manifests, local-resource manifests, relative Markdown links, file types,
+sizes and path lengths, and markers of personal or third-party material that
+must not ship.
 
 Usage: python tools/validate_repo.py [--root DIR] [--private DIR]
 
@@ -24,6 +25,8 @@ from pathlib import Path
 NAME_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 LINK_RE = re.compile(r"\[[^\]]*\]\(([^)\s]+)\)")
 MAX_FILE_BYTES = 2 * 1024 * 1024
+# Leaves room under the Windows 260-character limit for the clone or plugin-cache folder.
+MAX_PATH_CHARS = 150
 BLOCKED_SUFFIXES = {".pdf", ".ttf", ".otf", ".woff", ".woff2", ".zip", ".xlsx", ".xlsm", ".docx", ".pptx", ".epub"}
 TEXT_SUFFIXES = {".md", ".json", ".py", ".ps1", ".psm1", ".yml", ".yaml", ".txt", ".csv", ".js", ".gs", ".html", ".sh"}
 # Personal paths, private repository names, and retired third-party references.
@@ -216,6 +219,8 @@ def check_files(root: Path, rel, findings: list[str], private_hashes: dict[str, 
     for path in files_under(root):
         if path.stat().st_size > MAX_FILE_BYTES:
             findings.append(f"{rel(path)}: larger than {MAX_FILE_BYTES // (1024 * 1024)} MB")
+        if len(rel(path)) > MAX_PATH_CHARS:
+            findings.append(f"{rel(path)}: path is longer than {MAX_PATH_CHARS} characters")
         if SENSITIVE_NAME_RE.match(path.name):
             findings.append(f"{rel(path)}: looks like a secret or credential file")
         if path.suffix.lower() in BLOCKED_SUFFIXES:

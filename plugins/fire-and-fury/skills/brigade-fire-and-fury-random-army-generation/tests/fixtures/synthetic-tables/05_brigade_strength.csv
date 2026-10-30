@@ -1,0 +1,121 @@
+unit_type,period,side,d10_roll,stands_in_brigade
+Infantry,Early War,USA,1,7
+Infantry,Early War,USA,2,8
+Infantry,Early War,USA,3,9
+Infantry,Early War,USA,4,10
+Infantry,Early War,USA,5,11
+Infantry,Early War,USA,6,12
+Infantry,Early War,USA,7,13
+Infantry,Early War,USA,8,14
+Infantry,Early War,USA,9,15
+Infantry,Early War,USA,10,16
+Infantry,Early War,CSA,1,8
+Infantry,Early War,CSA,2,9
+Infantry,Early War,CSA,3,10
+Infantry,Early War,CSA,4,11
+Infantry,Early War,CSA,5,12
+Infantry,Early War,CSA,6,13
+Infantry,Early War,CSA,7,14
+Infantry,Early War,CSA,8,15
+Infantry,Early War,CSA,9,16
+Infantry,Early War,CSA,10,17
+Infantry,Mid-War,USA,1,6
+Infantry,Mid-War,USA,2,7
+Infantry,Mid-War,USA,3,8
+Infantry,Mid-War,USA,4,9
+Infantry,Mid-War,USA,5,10
+Infantry,Mid-War,USA,6,11
+Infantry,Mid-War,USA,7,12
+Infantry,Mid-War,USA,8,13
+Infantry,Mid-War,USA,9,14
+Infantry,Mid-War,USA,10,15
+Infantry,Mid-War,CSA,1,7
+Infantry,Mid-War,CSA,2,8
+Infantry,Mid-War,CSA,3,9
+Infantry,Mid-War,CSA,4,10
+Infantry,Mid-War,CSA,5,11
+Infantry,Mid-War,CSA,6,12
+Infantry,Mid-War,CSA,7,13
+Infantry,Mid-War,CSA,8,14
+Infantry,Mid-War,CSA,9,15
+Infantry,Mid-War,CSA,10,16
+Infantry,Late War,USA,1,5
+Infantry,Late War,USA,2,6
+Infantry,Late War,USA,3,7
+Infantry,Late War,USA,4,8
+Infantry,Late War,USA,5,9
+Infantry,Late War,USA,6,10
+Infantry,Late War,USA,7,11
+Infantry,Late War,USA,8,12
+Infantry,Late War,USA,9,13
+Infantry,Late War,USA,10,14
+Infantry,Late War,CSA,1,6
+Infantry,Late War,CSA,2,7
+Infantry,Late War,CSA,3,8
+Infantry,Late War,CSA,4,9
+Infantry,Late War,CSA,5,10
+Infantry,Late War,CSA,6,11
+Infantry,Late War,CSA,7,12
+Infantry,Late War,CSA,8,13
+Infantry,Late War,CSA,9,14
+Infantry,Late War,CSA,10,15
+Cavalry,Early War,USA,1,3
+Cavalry,Early War,USA,2,4
+Cavalry,Early War,USA,3,4
+Cavalry,Early War,USA,4,5
+Cavalry,Early War,USA,5,5
+Cavalry,Early War,USA,6,6
+Cavalry,Early War,USA,7,6
+Cavalry,Early War,USA,8,7
+Cavalry,Early War,USA,9,7
+Cavalry,Early War,USA,10,8
+Cavalry,Early War,CSA,1,4
+Cavalry,Early War,CSA,2,5
+Cavalry,Early War,CSA,3,5
+Cavalry,Early War,CSA,4,6
+Cavalry,Early War,CSA,5,6
+Cavalry,Early War,CSA,6,7
+Cavalry,Early War,CSA,7,7
+Cavalry,Early War,CSA,8,8
+Cavalry,Early War,CSA,9,8
+Cavalry,Early War,CSA,10,9
+Cavalry,Mid-War,USA,1,3
+Cavalry,Mid-War,USA,2,4
+Cavalry,Mid-War,USA,3,4
+Cavalry,Mid-War,USA,4,5
+Cavalry,Mid-War,USA,5,5
+Cavalry,Mid-War,USA,6,6
+Cavalry,Mid-War,USA,7,6
+Cavalry,Mid-War,USA,8,7
+Cavalry,Mid-War,USA,9,7
+Cavalry,Mid-War,USA,10,8
+Cavalry,Mid-War,CSA,1,4
+Cavalry,Mid-War,CSA,2,5
+Cavalry,Mid-War,CSA,3,5
+Cavalry,Mid-War,CSA,4,6
+Cavalry,Mid-War,CSA,5,6
+Cavalry,Mid-War,CSA,6,7
+Cavalry,Mid-War,CSA,7,7
+Cavalry,Mid-War,CSA,8,8
+Cavalry,Mid-War,CSA,9,8
+Cavalry,Mid-War,CSA,10,9
+Cavalry,Late War,USA,1,3
+Cavalry,Late War,USA,2,4
+Cavalry,Late War,USA,3,4
+Cavalry,Late War,USA,4,5
+Cavalry,Late War,USA,5,5
+Cavalry,Late War,USA,6,6
+Cavalry,Late War,USA,7,6
+Cavalry,Late War,USA,8,7
+Cavalry,Late War,USA,9,7
+Cavalry,Late War,USA,10,8
+Cavalry,Late War,CSA,1,3
+Cavalry,Late War,CSA,2,4
+Cavalry,Late War,CSA,3,4
+Cavalry,Late War,CSA,4,5
+Cavalry,Late War,CSA,5,5
+Cavalry,Late War,CSA,6,6
+Cavalry,Late War,CSA,7,6
+Cavalry,Late War,CSA,8,7
+Cavalry,Late War,CSA,9,7
+Cavalry,Late War,CSA,10,8

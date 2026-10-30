@@ -1,0 +1,29 @@
+{
+  "corps": [
+    { "Side": "USA", "Corps Name": "USA Test Corps", "Corps Commander": "Test Corps", "Exceptional Leader": "No", "Theatre": "Eastern", "Period": "Mid War" },
+    { "Side": "CSA", "Corps Name": "CSA Test Corps", "Corps Commander": "Test CSA", "Exceptional Leader": "No", "Theatre": "Eastern", "Period": "Mid War" }
+  ],
+  "divisions": [
+    { "Corps Name": "USA Test Corps", "Division Name": "USA Division 1", "Commander": "USA One", "Exceptional Leader": "No", "Side": "USA" },
+    { "Corps Name": "USA Test Corps", "Division Name": "USA Division 2", "Commander": "USA Two", "Exceptional Leader": "No", "Side": "USA" },
+    { "Corps Name": "USA Test Corps", "Division Name": "USA Division 3", "Commander": "USA Three", "Exceptional Leader": "No", "Side": "USA" },
+    { "Corps Name": "USA Test Corps", "Division Name": "USA Division 4", "Commander": "USA Four", "Exceptional Leader": "No", "Side": "USA" },
+    { "Corps Name": "USA Test Corps", "Division Name": "USA Division 5", "Commander": "USA Five", "Exceptional Leader": "No", "Side": "USA" },
+    { "Corps Name": "USA Test Corps", "Division Name": "USA Division 6", "Commander": "USA Six", "Exceptional Leader": "No", "Side": "USA" },
+    { "Corps Name": "USA Test Corps", "Division Name": "USA Division 7", "Commander": "USA Seven", "Exceptional Leader": "No", "Side": "USA" },
+    { "Corps Name": "USA Test Corps", "Division Name": "USA Division 8", "Commander": "USA Eight", "Exceptional Leader": "No", "Side": "USA" },
+    { "Corps Name": "CSA Test Corps", "Division Name": "CSA Division 1", "Commander": "CSA One", "Exceptional Leader": "No", "Side": "CSA" }
+  ],
+  "brigades": [
+    { "Division Name": "USA Division 1", "Brigade Name": "USA Brigade 1", "Type": "Infantry", "Stands": 9, "Experience": "Veteran", "Morale": "Reliable", "Weapon": "Rifle Musket", "Exceptional Leader": "No" },
+    { "Division Name": "USA Division 2", "Brigade Name": "USA Brigade 2", "Type": "Infantry", "Stands": 9, "Experience": "Veteran", "Morale": "Reliable", "Weapon": "Rifle Musket", "Exceptional Leader": "No" },
+    { "Division Name": "USA Division 3", "Brigade Name": "USA Brigade 3", "Type": "Infantry", "Stands": 9, "Experience": "Veteran", "Morale": "Reliable", "Weapon": "Rifle Musket", "Exceptional Leader": "No" },
+    { "Division Name": "USA Division 4", "Brigade Name": "USA Brigade 4", "Type": "Infantry", "Stands": 9, "Experience": "Veteran", "Morale": "Reliable", "Weapon": "Rifle Musket", "Exceptional Leader": "No" },
+    { "Division Name": "USA Division 5", "Brigade Name": "USA Brigade 5", "Type": "Infantry", "Stands": 9, "Experience": "Veteran", "Morale": "Reliable", "Weapon": "Rifle Musket", "Exceptional Leader": "No" },
+    { "Division Name": "USA Division 6", "Brigade Name": "USA Brigade 6", "Type": "Infantry", "Stands": 9, "Experience": "Veteran", "Morale": "Reliable", "Weapon": "Rifle Musket", "Exceptional Leader": "No" },
+    { "Division Name": "USA Division 7", "Brigade Name": "USA Brigade 7", "Type": "Infantry", "Stands": 9, "Experience": "Veteran", "Morale": "Reliable", "Weapon": "Rifle Musket", "Exceptional Leader": "No" },
+    { "Division Name": "USA Division 8", "Brigade Name": "USA Brigade 8", "Type": "Infantry", "Stands": 9, "Experience": "Veteran", "Morale": "Reliable", "Weapon": "Rifle Musket", "Exceptional Leader": "No" },
+    { "Division Name": "CSA Division 1", "Brigade Name": "CSA Brigade 1", "Type": "Infantry", "Stands": 9, "Experience": "Veteran", "Morale": "Reliable", "Weapon": "Rifle Musket", "Exceptional Leader": "No" }
+  ],
+  "artillery": []
+}

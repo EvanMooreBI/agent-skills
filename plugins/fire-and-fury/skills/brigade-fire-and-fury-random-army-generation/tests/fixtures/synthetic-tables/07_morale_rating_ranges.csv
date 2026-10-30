@@ -1,0 +1,25 @@
+period,side,morale_rating,modified_roll_min,modified_roll_max,open_ended_above,available
+Early War,USA,Dispirited,1,2,false,true
+Early War,USA,Unreliable,3,6,false,true
+Early War,USA,Reliable,7,8,false,true
+Early War,USA,Spirited,9,,true,true
+Early War,CSA,Dispirited,1,2,false,true
+Early War,CSA,Unreliable,3,6,false,true
+Early War,CSA,Reliable,7,7,false,true
+Early War,CSA,Spirited,8,,true,true
+Mid-War,USA,Dispirited,1,2,false,true
+Mid-War,USA,Unreliable,3,5,false,true
+Mid-War,USA,Reliable,6,8,false,true
+Mid-War,USA,Spirited,9,,true,true
+Mid-War,CSA,Dispirited,1,2,false,true
+Mid-War,CSA,Unreliable,3,5,false,true
+Mid-War,CSA,Reliable,6,7,false,true
+Mid-War,CSA,Spirited,8,,true,true
+Late War,USA,Dispirited,1,2,false,true
+Late War,USA,Unreliable,3,5,false,true
+Late War,USA,Reliable,6,8,false,true
+Late War,USA,Spirited,9,,true,true
+Late War,CSA,Dispirited,,,false,false
+Late War,CSA,Unreliable,1,4,false,true
+Late War,CSA,Reliable,5,8,false,true
+Late War,CSA,Spirited,9,,true,true

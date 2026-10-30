@@ -1,0 +1,7 @@
+PdfPath           : <Downloads>/Brigade Fire and Fury Unit Labels 2026-09-19.pdf
+GenerationLogPath : <Downloads>/Brigade Fire and Fury Unit Labels 2026-09-19 - Generation Log.csv
+Period            : Mid War
+Theater           : Eastern
+PdfPages          : 6
+LogRecords        : 325
+BalanceAdjustment : None; rules not yet approved

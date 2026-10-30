@@ -1,0 +1,505 @@
+{
+  "mode": "fixedRoster",
+  "period": "Mid War",
+  "theater": "Eastern",
+  "corps": [
+    {
+      "id": "usa-xii",
+      "side": "USA",
+      "name": "XII Corps",
+      "commander": "Maj. Gen. Henry W. Slocum"
+    },
+    {
+      "id": "usa-xi",
+      "side": "USA",
+      "name": "XI Corps",
+      "commander": "Maj. Gen. Oliver O. Howard"
+    },
+    {
+      "id": "csa-second",
+      "side": "CSA",
+      "name": "Second Corps",
+      "commander": "Lt. Gen. Thomas J. Jackson"
+    }
+  ],
+  "divisions": [
+    {
+      "id": "usa-xii-1",
+      "corpsId": "usa-xii",
+      "side": "USA",
+      "name": "First Division",
+      "commander": "Brig. Gen. Alpheus Williams"
+    },
+    {
+      "id": "usa-xii-2",
+      "corpsId": "usa-xii",
+      "side": "USA",
+      "name": "Second Division",
+      "commander": "Brig. Gen. John W. Geary"
+    },
+    {
+      "id": "usa-xi-2",
+      "corpsId": "usa-xi",
+      "side": "USA",
+      "name": "2nd Division",
+      "commander": "Brig. Gen. Adolph Steinwehr"
+    },
+    {
+      "id": "usa-xi-3",
+      "corpsId": "usa-xi",
+      "side": "USA",
+      "name": "Third Division",
+      "commander": "Maj. Gen. Carl Schurz"
+    },
+    {
+      "id": "csa-rodes",
+      "corpsId": "csa-second",
+      "side": "CSA",
+      "name": "Rodes's Division",
+      "commander": "Brig. Gen. Robert E. Rodes"
+    },
+    {
+      "id": "csa-colston",
+      "corpsId": "csa-second",
+      "side": "CSA",
+      "name": "Colston's Division",
+      "commander": "Brig. Gen. Raleigh Colston"
+    },
+    {
+      "id": "csa-light",
+      "corpsId": "csa-second",
+      "side": "CSA",
+      "name": "A. P. Hill's Light Division",
+      "commander": "A. P. Hill"
+    }
+  ],
+  "brigades": [
+    {
+      "divisionId": "usa-xii-1",
+      "name": "Knipe",
+      "type": "Infantry",
+      "stands": 9,
+      "experience": "Vet",
+      "morale": "Reliable",
+      "effectiveness": "9/7/5",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "usa-xii-1",
+      "name": "Ross",
+      "type": "Infantry",
+      "stands": 9,
+      "experience": "Exp",
+      "morale": "Reliable",
+      "effectiveness": "9/7/5",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "usa-xii-1",
+      "name": "Ruger",
+      "type": "Infantry",
+      "stands": 11,
+      "experience": "Vet",
+      "morale": "Reliable",
+      "effectiveness": "11/9/6",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "usa-xii-2",
+      "name": "Candy",
+      "type": "Infantry",
+      "stands": 12,
+      "experience": "Vet",
+      "morale": "Reliable",
+      "effectiveness": "12/9/6",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "usa-xii-2",
+      "name": "Kane",
+      "type": "Infantry",
+      "stands": 10,
+      "experience": "Vet",
+      "morale": "Reliable",
+      "effectiveness": "10/8/5",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "usa-xii-2",
+      "name": "Greene",
+      "type": "Infantry",
+      "stands": 10,
+      "experience": "Vet",
+      "morale": "Reliable",
+      "effectiveness": "10/8/5",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "usa-xi-2",
+      "name": "Buschbeck",
+      "type": "Infantry",
+      "stands": 7,
+      "experience": "Exp",
+      "morale": "Reliable",
+      "effectiveness": "7/6/4",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "usa-xi-2",
+      "name": "Barlow",
+      "type": "Infantry",
+      "stands": 9,
+      "experience": "Exp",
+      "morale": "Reliable",
+      "effectiveness": "9/7/5",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "usa-xi-3",
+      "name": "Schimmelfennig",
+      "type": "Infantry",
+      "stands": 10,
+      "experience": "Exp",
+      "morale": "Reliable",
+      "effectiveness": "10/8/5",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "usa-xi-3",
+      "name": "Krzyzanowski",
+      "type": "Infantry",
+      "stands": 8,
+      "experience": "Exp",
+      "morale": "Reliable",
+      "effectiveness": "8/6/4",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "csa-rodes",
+      "name": "O'Neal",
+      "type": "Infantry",
+      "stands": 11,
+      "experience": "Vet",
+      "morale": "Spirited",
+      "effectiveness": "11/8/5",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "csa-rodes",
+      "name": "Colquitt",
+      "type": "Infantry",
+      "stands": 11,
+      "experience": "Vet",
+      "morale": "Spirited",
+      "effectiveness": "11/8/5",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "csa-rodes",
+      "name": "Ramseur",
+      "type": "Infantry",
+      "stands": 8,
+      "experience": "Vet",
+      "morale": "Spirited",
+      "effectiveness": "8/5/3",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "csa-rodes",
+      "name": "Doles",
+      "type": "Infantry",
+      "stands": 8,
+      "experience": "Vet",
+      "morale": "Spirited",
+      "effectiveness": "8/5/3",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "csa-rodes",
+      "name": "Iverson",
+      "type": "Infantry",
+      "stands": 9,
+      "experience": "Vet",
+      "morale": "Spirited",
+      "effectiveness": "9/6/4",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "csa-colston",
+      "name": "Paxton",
+      "type": "Infantry",
+      "stands": 9,
+      "experience": "Crk",
+      "morale": "Spirited",
+      "effectiveness": "9/6/4",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "csa-colston",
+      "name": "J. R. Jones",
+      "type": "Infantry",
+      "stands": 8,
+      "experience": "Vet",
+      "morale": "Spirited",
+      "effectiveness": "8/5/3",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "csa-colston",
+      "name": "Warren",
+      "type": "Infantry",
+      "stands": 13,
+      "experience": "Vet",
+      "morale": "Spirited",
+      "effectiveness": "13/9/6",
+      "weapon": "MM"
+    },
+    {
+      "divisionId": "csa-colston",
+      "name": "Nicholls",
+      "type": "Infantry",
+      "stands": 8,
+      "experience": "Vet",
+      "morale": "Spirited",
+      "effectiveness": "8/5/3",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "csa-light",
+      "name": "Heth",
+      "type": "Infantry",
+      "stands": 7,
+      "experience": "Vet",
+      "morale": "Reliable",
+      "effectiveness": "7/6/4",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "csa-light",
+      "name": "Archer",
+      "type": "Infantry",
+      "stands": 8,
+      "experience": "Vet",
+      "morale": "Spirited",
+      "effectiveness": "8/5/3",
+      "weapon": "RM"
+    },
+    {
+      "divisionId": "csa-light",
+      "name": "Thomas",
+      "type": "Infantry",
+      "stands": 7,
+      "experience": "Vet",
+      "morale": "Spirited",
+      "effectiveness": "7/5/3",
+      "weapon": "RM"
+    }
+  ],
+  "artillery": [
+    {
+      "divisionId": "csa-rodes",
+      "name": "Reese (AL)",
+      "experience": "Exp",
+      "weapon": "RN"
+    },
+    {
+      "divisionId": "csa-rodes",
+      "name": "Carter (VA)",
+      "experience": "Exp",
+      "weapon": "RS"
+    },
+    {
+      "divisionId": "csa-rodes",
+      "name": "Fry (VA)",
+      "experience": "Exp",
+      "weapon": "SB"
+    },
+    {
+      "divisionId": "csa-rodes",
+      "name": "Page (VA)",
+      "experience": "Exp",
+      "weapon": "RS"
+    },
+    {
+      "divisionId": "csa-colston",
+      "name": "Carrington (VA)",
+      "experience": "Exp",
+      "weapon": "RS"
+    },
+    {
+      "divisionId": "csa-colston",
+      "name": "Garber/Fultz (VA)",
+      "experience": "Exp",
+      "weapon": "SB"
+    },
+    {
+      "divisionId": "csa-colston",
+      "name": "Tanner (VA)",
+      "experience": "Exp",
+      "weapon": "RN"
+    },
+    {
+      "divisionId": "csa-colston",
+      "name": "Thompson (LA)",
+      "experience": "Exp",
+      "weapon": "LR"
+    },
+    {
+      "divisionId": "csa-light",
+      "name": "Brunson (SC)",
+      "experience": "Exp",
+      "weapon": "RN"
+    },
+    {
+      "divisionId": "csa-light",
+      "name": "Davidson (VA)",
+      "experience": "Exp",
+      "weapon": "RN"
+    },
+    {
+      "divisionId": "csa-light",
+      "name": "McGraw (VA)",
+      "experience": "Exp",
+      "weapon": "RN"
+    }
+  ],
+  "standaloneArtillery": [
+    {
+      "side": "USA",
+      "corpsId": "usa-xii",
+      "name": "K/1st NY",
+      "experience": "Vet",
+      "weapon": "LR"
+    },
+    {
+      "side": "USA",
+      "corpsId": "usa-xii",
+      "name": "M/1st NY",
+      "experience": "Vet",
+      "weapon": "LR"
+    },
+    {
+      "side": "USA",
+      "corpsId": "usa-xii",
+      "name": "F/4th US",
+      "experience": "Vet",
+      "weapon": "NP"
+    },
+    {
+      "side": "USA",
+      "corpsId": "usa-xii",
+      "name": "E/1st PA",
+      "experience": "Vet",
+      "weapon": "LR"
+    },
+    {
+      "side": "USA",
+      "corpsId": "usa-xii",
+      "name": "F/1st PA",
+      "experience": "Vet",
+      "weapon": "LR"
+    },
+    {
+      "side": "USA",
+      "corpsId": "usa-xi",
+      "name": "I/1st NY",
+      "experience": "Vet",
+      "weapon": "LR"
+    },
+    {
+      "side": "USA",
+      "corpsId": "usa-xi",
+      "name": "I/1st OH",
+      "experience": "Vet",
+      "weapon": "NP"
+    },
+    {
+      "side": "USA",
+      "corpsId": "usa-xi",
+      "name": "K/1st OH",
+      "experience": "Vet",
+      "weapon": "NP"
+    },
+    {
+      "side": "USA",
+      "corpsId": "usa-xi",
+      "name": "C/1st WV",
+      "experience": "Vet",
+      "weapon": "LR"
+    }
+  ],
+  "unassignedBrigades": [
+    {
+      "side": "USA",
+      "corpsId": "USA-XII",
+      "name": "Reserve Adams",
+      "type": "Infantry",
+      "stands": 9,
+      "experience": "Vet",
+      "morale": "Reliable",
+      "effectiveness": "9/7/5",
+      "weapon": "RM",
+      "exceptionalLeader": false
+    },
+    {
+      "side": "USA",
+      "corpsId": "USA-XII",
+      "name": "Reserve Baker",
+      "type": "Cavalry",
+      "stands": 9,
+      "experience": "Vet",
+      "morale": "Reliable",
+      "effectiveness": "9/7/5",
+      "weapon": "RM",
+      "exceptionalLeader": true
+    },
+    {
+      "side": "USA",
+      "corpsId": "USA-XI",
+      "name": "Reserve Adams",
+      "type": "Infantry",
+      "stands": 9,
+      "experience": "Vet",
+      "morale": "Reliable",
+      "effectiveness": "9/7/5",
+      "weapon": "RM",
+      "exceptionalLeader": false
+    },
+    {
+      "side": "USA",
+      "corpsId": "USA-XI",
+      "name": "Reserve Baker",
+      "type": "Cavalry",
+      "stands": 9,
+      "experience": "Vet",
+      "morale": "Reliable",
+      "effectiveness": "9/7/5",
+      "weapon": "RM",
+      "exceptionalLeader": true
+    },
+    {
+      "side": "CSA",
+      "corpsId": "CSA-SECOND",
+      "name": "Reserve Adams",
+      "type": "Infantry",
+      "stands": 9,
+      "experience": "Vet",
+      "morale": "Reliable",
+      "effectiveness": "9/7/5",
+      "weapon": "RM",
+      "exceptionalLeader": false
+    },
+    {
+      "side": "CSA",
+      "corpsId": "CSA-SECOND",
+      "name": "Reserve Baker",
+      "type": "Cavalry",
+      "stands": 9,
+      "experience": "Vet",
+      "morale": "Reliable",
+      "effectiveness": "9/7/5",
+      "weapon": "RM",
+      "exceptionalLeader": true
+    }
+  ]
+}

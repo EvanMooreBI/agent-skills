@@ -1,0 +1,546 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Brigade Fire and Fury request",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/randomRequest"
+    },
+    {
+      "$ref": "#/$defs/fixedRosterRequest"
+    }
+  ],
+  "$defs": {
+    "randomRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "players",
+        "matchup",
+        "period",
+        "theater",
+        "includeCavalry"
+      ],
+      "properties": {
+        "players": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "total",
+            "USA",
+            "CSA"
+          ],
+          "properties": {
+            "total": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 10
+            },
+            "USA": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6
+            },
+            "CSA": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 4
+            }
+          }
+        },
+        "matchup": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id"
+          ],
+          "properties": {
+            "id": {
+              "enum": [
+                "M1",
+                "M2",
+                "M3",
+                "M4",
+                "M5",
+                "M6",
+                "M7",
+                "M8"
+              ]
+            },
+            "csaVariant": {
+              "enum": [
+                "twoCorps",
+                "oneCorps"
+              ]
+            }
+          }
+        },
+        "period": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mode"
+          ],
+          "properties": {
+            "mode": {
+              "enum": [
+                "fixed",
+                "random"
+              ]
+            },
+            "value": {
+              "enum": [
+                "Early War",
+                "Mid War",
+                "Late War"
+              ]
+            }
+          }
+        },
+        "theater": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mode"
+          ],
+          "properties": {
+            "mode": {
+              "enum": [
+                "fixed",
+                "random"
+              ]
+            },
+            "value": {
+              "enum": [
+                "Eastern",
+                "Western"
+              ]
+            }
+          }
+        },
+        "year": {
+          "type": "integer",
+          "minimum": 1861,
+          "maximum": 1865
+        },
+        "includeCavalry": {
+          "type": "boolean"
+        }
+      }
+    },
+    "fixedRosterRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "period",
+        "theater",
+        "corps",
+        "divisions",
+        "brigades",
+        "artillery",
+        "standaloneArtillery"
+      ],
+      "properties": {
+        "mode": {
+          "const": "fixedRoster"
+        },
+        "period": {
+          "enum": [
+            "Early War",
+            "Mid War",
+            "Late War"
+          ]
+        },
+        "theater": {
+          "enum": [
+            "Eastern",
+            "Western"
+          ]
+        },
+        "corps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/corps"
+          }
+        },
+        "divisions": {
+          "type": "array",
+          "minItems": 0,
+          "items": {
+            "$ref": "#/$defs/division"
+          }
+        },
+        "brigades": {
+          "type": "array",
+          "minItems": 0,
+          "items": {
+            "$ref": "#/$defs/brigade"
+          }
+        },
+        "artillery": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/divisionArtillery"
+          }
+        },
+        "standaloneArtillery": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/standaloneArtillery"
+          }
+        },
+        "unassignedBrigades": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/unassignedBrigade"
+          }
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "brigades"
+          ],
+          "properties": {
+            "brigades": {
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "artillery"
+          ],
+          "properties": {
+            "artillery": {
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "standaloneArtillery"
+          ],
+          "properties": {
+            "standaloneArtillery": {
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "unassignedBrigades"
+          ],
+          "properties": {
+            "unassignedBrigades": {
+              "minItems": 1
+            }
+          }
+        }
+      ]
+    },
+    "corps": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "side",
+        "name",
+        "commander"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "side": {
+          "enum": [
+            "USA",
+            "CSA"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "commander": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exceptionalLeader": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "division": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "corpsId",
+        "side",
+        "name",
+        "commander"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "corpsId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "side": {
+          "enum": [
+            "USA",
+            "CSA"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "commander": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exceptionalLeader": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "brigade": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "divisionId",
+        "name",
+        "type",
+        "stands",
+        "experience",
+        "morale",
+        "effectiveness",
+        "weapon"
+      ],
+      "properties": {
+        "divisionId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "Infantry",
+            "Cavalry"
+          ]
+        },
+        "stands": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 25
+        },
+        "experience": {
+          "enum": [
+            "Crk",
+            "Vet",
+            "Exp",
+            "Grn"
+          ]
+        },
+        "morale": {
+          "enum": [
+            "Spirited",
+            "Reliable",
+            "Unreliable",
+            "Dispirited"
+          ]
+        },
+        "effectiveness": {
+          "type": "string",
+          "minLength": 1
+        },
+        "weapon": {
+          "enum": [
+            "RM",
+            "MM",
+            "RC",
+            "RP",
+            "BL",
+            "SM",
+            "SH"
+          ]
+        },
+        "exceptionalLeader": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "divisionArtillery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "divisionId",
+        "name",
+        "experience",
+        "weapon"
+      ],
+      "properties": {
+        "divisionId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "experience": {
+          "enum": [
+            "Crk",
+            "Vet",
+            "Exp",
+            "Grn"
+          ]
+        },
+        "weapon": {
+          "$ref": "#/$defs/artilleryWeapon"
+        }
+      }
+    },
+    "standaloneArtillery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "side",
+        "corpsId",
+        "name",
+        "experience",
+        "weapon"
+      ],
+      "properties": {
+        "side": {
+          "enum": [
+            "USA",
+            "CSA"
+          ]
+        },
+        "corpsId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "experience": {
+          "enum": [
+            "Crk",
+            "Vet",
+            "Exp",
+            "Grn"
+          ]
+        },
+        "weapon": {
+          "$ref": "#/$defs/artilleryWeapon"
+        }
+      }
+    },
+    "artilleryWeapon": {
+      "enum": [
+        "FG",
+        "SG",
+        "NG",
+        "HR",
+        "LR",
+        "RN",
+        "RS",
+        "NP",
+        "SB"
+      ]
+    },
+    "unassignedBrigade": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type",
+        "stands",
+        "experience",
+        "morale",
+        "effectiveness",
+        "weapon",
+        "side",
+        "corpsId"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "Infantry",
+            "Cavalry"
+          ]
+        },
+        "stands": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 25
+        },
+        "experience": {
+          "enum": [
+            "Crk",
+            "Vet",
+            "Exp",
+            "Grn"
+          ]
+        },
+        "morale": {
+          "enum": [
+            "Spirited",
+            "Reliable",
+            "Unreliable",
+            "Dispirited"
+          ]
+        },
+        "effectiveness": {
+          "type": "string",
+          "minLength": 1
+        },
+        "weapon": {
+          "enum": [
+            "RM",
+            "MM",
+            "RC",
+            "RP",
+            "BL",
+            "SM",
+            "SH"
+          ]
+        },
+        "exceptionalLeader": {
+          "type": "boolean",
+          "default": false
+        },
+        "side": {
+          "enum": [
+            "USA",
+            "CSA"
+          ]
+        },
+        "corpsId": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "snapshotDate": "2026-09-19",
+  "game": "Brigade Fire and Fury, 2nd Edition",
+  "generatorTables": {
+    "location": "Local resource generator-tables. See local-resources.json.",
+    "bundled": ["tables/07_brigade_effectiveness_table.csv"],
+    "validation": "scripts/Test-BrigadeTables.ps1",
+    "notes": "The other generator tables come from the rulebook and are not distributed. Users create them from their own copy of the book."
+  },
+  "labelRenderer": {
+    "source": "The maintained Brigade Fire and Fury Google Sheets project (apps-script folder).",
+    "files": [
+      {
+        "name": "Code.gs",
+        "sha256": "D78E7AE202867FBA1C275C323384CD50373C3081F2459762DA1DCB1CC2E358B6"
+      },
+      {
+        "name": "LabelPdf.html",
+        "sha256": "958C4A28E1E9CBEA6B21FAE682E2EA1EFD129050D6C77750D7C2EA593406D581"
+      }
+    ],
+    "notes": "Bundled byte-identical for local validation and rule abbreviations. The local renderer has independent geometry and pagination."
+  },
+  "historicalCommanderSources": [
+    "https://www.nps.gov/people/edwin-vose-sumner.htm",
+    "https://www.nps.gov/people/samuel-peter-heintzelman.htm",
+    "https://www.nps.gov/mana/learn/historyculture/union-order-of-battle-first-manassas.htm",
+    "https://www.nps.gov/mana/learn/historyculture/confederate-order-of-battle-first-manassas.htm",
+    "https://en.wikipedia.org/wiki/Battle_of_Shiloh_order_of_battle:_Union",
+    "https://en.wikipedia.org/wiki/Battle_of_Shiloh_order_of_battle:_Confederate",
+    "https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm",
+    "https://www.nps.gov/gett/learn/historyculture/anv-orderofbattle.htm",
+    "https://www.nps.gov/kemo/learn/historyculture/union-order-of-battle.htm",
+    "https://www.nps.gov/kemo/learn/historyculture/confederate-order-of-battle.htm"
+  ],
+  "houseRules": [
+    "Below-table morale clamps to the lowest printed band.",
+    "Repeater caps apply per corps and arm.",
+    "Heavy Rifle cap is floor(total side battery stands / 10).",
+    "Display-only cavalry containers receive no leader roll."
+  ]
+}

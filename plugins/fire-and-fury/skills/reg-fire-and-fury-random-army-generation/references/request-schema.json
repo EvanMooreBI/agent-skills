@@ -1,0 +1,40 @@
+{
+  "theatre": "Eastern",
+  "period": "Mid War",
+  "year": 1863,
+  "mountainHowitzerEligible": false,
+  "forces": {
+    "USA": {
+      "division": {
+        "name": null,
+        "commander": null,
+        "talent": null
+      },
+      "brigades": [
+        {
+          "type": "Infantry",
+          "name": null,
+          "commander": null,
+          "talent": null,
+          "regimentNames": [],
+          "regimentCommanders": []
+        }
+      ],
+      "independent": {
+        "infantry": 0,
+        "cavalry": 0,
+        "artillery": 0,
+        "commander": null,
+        "talent": null,
+        "unitNames": [],
+        "unitCommanders": []
+      },
+      "divisionArtillery": {
+        "commander": null,
+        "talent": null,
+        "batteryNames": [],
+        "batteryCommanders": []
+      }
+    }
+  }
+}

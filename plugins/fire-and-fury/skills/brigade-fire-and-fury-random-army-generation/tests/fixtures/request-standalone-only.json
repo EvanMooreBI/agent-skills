@@ -1,0 +1,38 @@
+{
+  "mode": "fixedRoster",
+  "period": "Mid War",
+  "theater": "Eastern",
+  "corps": [
+    {
+      "id": "usa-unassigned",
+      "side": "USA",
+      "name": "USA Corps",
+      "commander": "Slocum"
+    },
+    {
+      "id": "csa-unassigned",
+      "side": "CSA",
+      "name": "CSA Corps",
+      "commander": "Jackson"
+    }
+  ],
+  "divisions": [],
+  "brigades": [],
+  "artillery": [],
+  "standaloneArtillery": [
+    {
+      "side": "USA",
+      "corpsId": "USA-UNASSIGNED",
+      "name": "USA Battery",
+      "experience": "Vet",
+      "weapon": "LR"
+    },
+    {
+      "side": "CSA",
+      "corpsId": "CSA-UNASSIGNED",
+      "name": "CSA Battery",
+      "experience": "Vet",
+      "weapon": "LR"
+    }
+  ]
+}

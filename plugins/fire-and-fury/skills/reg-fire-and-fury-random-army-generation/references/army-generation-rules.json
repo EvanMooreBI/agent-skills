@@ -1,0 +1,115 @@
+{
+  "version": "1.0.0",
+  "periods": { "1861": "Early War", "1862": "Early War", "1863": "Mid War", "1864": "Late War", "1865": "Late War" },
+  "table1": {
+    "USA": { "bands": [[3,3],[7,4],[9,5],[999,6]], "westernModifier": 1 },
+    "CSA": { "bands": [[2,3],[6,4],[9,5],[999,6]], "westernModifier": -1 }
+  },
+  "table2": {
+    "Early War": { "USA": [[3,"Poor"],[9,"Able"],[999,"Gallant"]], "CSA": [[2,"Poor"],[8,"Able"],[999,"Gallant"]] },
+    "Mid War": { "USA": [[2,"Poor"],[8,"Able"],[999,"Gallant"]], "CSA": [[1,"Poor"],[7,"Able"],[999,"Gallant"]] },
+    "Late War": { "USA": [[1,"Poor"],[8,"Able"],[999,"Gallant"]], "CSA": [[2,"Poor"],[8,"Able"],[999,"Gallant"]] }
+  },
+  "table2_1": { "braveColonelRoll": 10, "capPerBrigade": 2 },
+  "table3": {
+    "1": [[5,1],[999,2]], "2": [[5,2],[999,3]], "3": [[3,2],[9,3],[999,4]],
+    "4": [[1,2],[7,3],[999,4]], "5": [[5,3],[999,4]]
+  },
+  "table3_1": { "USA": [[2,2],[999,3]], "CSA": [[1,1],[999,2]] },
+  "table4": {
+    "Infantry": {
+      "Early War": { "USA": [13,14,15,15,16,16,17,17,18,19], "CSA": [14,15,16,16,17,17,18,18,19,20] },
+      "Mid War": { "USA": [10,11,12,12,13,13,14,14,15,16], "CSA": [11,12,13,13,14,14,15,15,16,17] },
+      "Late War": { "USA": [7,8,9,9,10,10,11,11,12,13], "CSA": [6,7,8,8,9,9,10,10,11,12] }
+    },
+    "Cavalry": {
+      "Early War": { "USA": [5,5,6,6,7,7,8,8,9,10], "CSA": [6,7,8,8,9,9,10,10,11,12] },
+      "Mid War": { "USA": [6,7,7,8,8,9,9,10,11,12], "CSA": [6,7,8,8,9,9,10,10,11,12] },
+      "Late War": { "USA": [6,7,7,8,8,9,9,10,11,12], "CSA": [5,6,7,7,8,8,9,9,10,11] }
+    }
+  },
+  "table5": {
+    "Infantry": {
+      "Early War": { "USA": ["Green","Green","Green","Green","Green","Green","Trained","Trained","Trained","Veteran"], "CSA": ["Green","Green","Green","Green","Green","Trained","Trained","Veteran","Veteran","Crack"] },
+      "Mid War": { "USA": ["Green","Green","Trained","Trained","Trained","Trained","Veteran","Veteran","Veteran","Crack"], "CSA": ["Green","Trained","Trained","Trained","Veteran","Veteran","Veteran","Veteran","Crack","Crack"] },
+      "Late War": { "USA": ["Green","Trained","Trained","Trained","Trained","Veteran","Veteran","Veteran","Crack","Crack"], "CSA": ["Green","Trained","Trained","Veteran","Veteran","Veteran","Veteran","Crack","Crack","Crack"] }
+    },
+    "Cavalry": {
+      "Early War": { "USA": ["Green","Green","Green","Green","Green","Trained","Trained","Trained","Trained","Veteran"], "CSA": ["Green","Green","Green","Trained","Trained","Trained","Trained","Trained","Veteran","Veteran"] },
+      "Mid War": { "USA": ["Green","Trained","Trained","Trained","Veteran","Veteran","Veteran","Veteran","Veteran","Crack"], "CSA": ["Trained","Trained","Trained","Veteran","Veteran","Veteran","Veteran","Veteran","Crack","Crack"] },
+      "Late War": { "USA": ["Trained","Trained","Trained","Veteran","Veteran","Veteran","Veteran","Veteran","Crack","Crack"], "CSA": ["Trained","Trained","Trained","Trained","Veteran","Veteran","Veteran","Veteran","Veteran","Crack"] }
+    },
+    "Artillery": {
+      "Early War": { "USA": ["Green","Green","Green","Green","Trained","Trained","Trained","Trained","Veteran","Veteran"], "CSA": ["Green","Green","Green","Green","Green","Green","Trained","Trained","Trained","Veteran"] },
+      "Mid War": { "USA": ["Trained","Trained","Trained","Veteran","Veteran","Veteran","Veteran","Veteran","Crack","Crack"], "CSA": ["Trained","Trained","Trained","Trained","Trained","Trained","Veteran","Veteran","Veteran","Crack"] },
+      "Late War": { "USA": ["Trained","Trained","Veteran","Veteran","Veteran","Veteran","Veteran","Crack","Crack","Crack"], "CSA": ["Trained","Trained","Trained","Trained","Veteran","Veteran","Veteran","Veteran","Crack","Crack"] }
+    }
+  },
+  "table6": {
+    "Early War": { "USA": [[4,"Unreliable"],[7,"Reliable"],[999,"Spirited"]], "CSA": [[3,"Unreliable"],[6,"Reliable"],[999,"Spirited"]] },
+    "Mid War": { "USA": [[3,"Unreliable"],[7,"Reliable"],[999,"Spirited"]], "CSA": [[1,"Unreliable"],[5,"Reliable"],[999,"Spirited"]] },
+    "Late War": { "USA": [[5,"Unreliable"],[8,"Reliable"],[999,"Spirited"]], "CSA": [[4,"Unreliable"],[7,"Reliable"],[999,"Spirited"]] }
+  },
+  "table6Modifiers": { "Crack": 2, "Veteran": 1, "EasternCSA": 1, "LateWesternUSA": 1, "EarlyUSACavalry": -1 },
+  "table7": {
+    "Infantry": {
+      "Eastern": {
+        "Early War": { "USA": ["SM","SM","RM","RM","RM","RM","RM","RM","RM","RM"], "CSA": ["SM","SM","SM","IR","RM","RM","RM","RM","RM","RM"] },
+        "Mid War": { "USA": ["SM","RM","RM","RM","RM","RM","RM","RM","RM","RM"], "CSA": ["SM","RM","RM","RM","RM","RM","RM","RM","RM","RM"] },
+        "Late War": { "USA": ["RM","RM","RM","RM","RM","RM","RM","RM","RM","RM"], "CSA": ["SM","RM","RM","RM","RM","RM","RM","RM","RM","RM"] }
+      },
+      "Western": {
+        "Early War": { "USA": ["SM","SM","SM","IR","RM","RM","RM","RM","RM","RM"], "CSA": ["SH","SM","SM","SM","SM","SM","IR","RM","RM","RM"] },
+        "Mid War": { "USA": ["IR","RM","RM","RM","RM","RM","RM","RM","RM","RM"], "CSA": ["SM","SM","RM","RM","RM","RM","RM","RM","RM","RM"] },
+        "Late War": { "USA": ["RM","RM","RM","RM","RM","RM","RM","RM","RM","RM"], "CSA": ["SM","IR","RM","RM","RM","RM","RM","RM","RM","RM"] }
+      }
+    },
+    "Cavalry": {
+      "Eastern": {
+        "Early War": { "USA": ["RC","RC","RC","BLC","BLC","BLC","BLC","BLC","BLC","BLC"], "CSA": ["SH","SH","SH","SH","SH","SH","SH","RC","RC","RC"] },
+        "Mid War": { "USA": ["RC","RC","BLC","BLC","BLC","BLC","BLC","BLC","BLC","RPC"], "CSA": ["SH","SH","SH","RC","RC","RC","RC","RC","RC","BLC"] },
+        "Late War": { "USA": ["RC","BLC","BLC","BLC","BLC","RPC","RPC","RPC","RPC","RPC"], "CSA": ["SH","SH","RC","RC","RC","RC","RC","RC","RC","BLC"] }
+      },
+      "Western": {
+        "Early War": { "USA": ["RC","RC","RC","BLC","BLC","BLC","BLC","BLC","BLC","BLC"], "CSA": ["SH","SH","SH","SH","SH","SH","SH","SH","SH","SH"] },
+        "Mid War": { "USA": ["RC","RC","BLC","BLC","BLC","BLC","BLC","BLC","BLC","RPC"], "CSA": ["SH","SH","SH","SH","RC","RC","RC","RC","RC","BLC"] },
+        "Late War": { "USA": ["RC","BLC","BLC","RPC","RPC","RPC","RPC","RPC","RPC","RPC"], "CSA": ["SH","SH","RC","RC","RC","RC","RC","RC","RC","BLC"] }
+      }
+    },
+    "Artillery": {
+      "Eastern": {
+        "Early War": { "USA": ["LH","LS","HS","HS","HS","LR","LR","LR","LR","LR"], "CSA": ["LH","LH","LS","LS","LS","HS","LR","LR","LR","LR"] },
+        "Mid War": { "USA": ["HS","HS","HS","HS","HS","LR","LR","LR","LR","LR"], "CSA": ["LH","LH","HS","HS","HS","LR","LR","LR","LR","LR"] },
+        "Late War": { "USA": ["HS","HS","HS","HS","HS","LR","LR","LR","LR","LR"], "CSA": ["LH","LS","HS","HS","HS","HS","LR","LR","LR","LR"] }
+      },
+      "Western": {
+        "Early War": { "USA": ["LH","LH","LH","LS","LS","HS","LR","LR","LR","LR"], "CSA": ["LH","LH","LS","LS","LS","LS","LS","HS","LR","LR"] },
+        "Mid War": { "USA": ["LH","LH","LS","HS","HS","LR","LR","LR","LR","HR"], "CSA": ["LH","LH","LH","LH","LS","HS","HS","HS","HS","LR"] },
+        "Late War": { "USA": ["LH","LS","HS","HS","HS","LR","LR","LR","LR","LR"], "CSA": ["LH","LH","LH","LS","HS","HS","HS","HS","LR","LR"] }
+      }
+    }
+  },
+  "weapons": {
+    "RM":"Rifle Musket","BLC":"Breechloader","RPC":"Repeater","IR":"Inferior Rifle","RC":"Rifle & Carbine","SM":"Smoothbore Musket","SH":"Shotgun & Hunting Rifle",
+    "HR":"Heavy Rifle","LR":"Light Rifle","HS":"Heavy Smoothbore","LS":"Light Smoothbore","HH":"Heavy Howitzer","LH":"Light Howitzer","MH":"Mountain Howitzer"
+  },
+  "experienceCodes": { "Crack":"Crk", "Veteran":"Vet", "Trained":"Trn", "Green":"Grn" },
+  "caps": { "repeatersPerSide": 3, "heavyRiflesPerSide": 1 },
+  "effectiveness": {
+    "2":{"Spirited":"2/-/1","Reliable":"2/-/1","Unreliable":"2/-/1"},"3":{"Spirited":"3/-/1","Reliable":"3/2/1","Unreliable":"3/-/2"},
+    "4":{"Spirited":"4/2/1","Reliable":"4/3/2","Unreliable":"4/-/3"},"5":{"Spirited":"5/3/2","Reliable":"5/4/3","Unreliable":"5/-/4"},
+    "6":{"Spirited":"6/4/2","Reliable":"6/5/3","Unreliable":"6/5/4"},"7":{"Spirited":"7/5/3","Reliable":"7/6/4","Unreliable":"7/6/5"},
+    "8":{"Spirited":"8/5/3","Reliable":"8/6/4","Unreliable":"8/7/6"},"9":{"Spirited":"9/6/4","Reliable":"9/7/5","Unreliable":"9/8/7"},
+    "10":{"Spirited":"10/7/4","Reliable":"10/8/5","Unreliable":"10/9/7"},"11":{"Spirited":"11/8/5","Reliable":"11/9/6","Unreliable":"11/10/8"},
+    "12":{"Spirited":"12/8/5","Reliable":"12/9/6","Unreliable":"12/10/8"},"13":{"Spirited":"13/9/6","Reliable":"13/10/7","Unreliable":"13/11/9"},
+    "14":{"Spirited":"14/10/6","Reliable":"14/11/7","Unreliable":"14/12/9"},"15":{"Spirited":"15/11/7","Reliable":"15/12/8","Unreliable":"15/13/10"},
+    "16":{"Spirited":"16/11/7","Reliable":"16/12/8","Unreliable":"16/13/10"},"17":{"Spirited":"17/12/8","Reliable":"17/13/9","Unreliable":"17/14/11"},
+    "18":{"Spirited":"18/13/8","Reliable":"18/14/9","Unreliable":"18/15/11"},"19":{"Spirited":"19/14/9","Reliable":"19/15/10","Unreliable":"19/16/12"},
+    "20":{"Spirited":"20/14/9","Reliable":"20/15/10","Unreliable":"20/16/12"},"21":{"Spirited":"21/15/10","Reliable":"21/16/11","Unreliable":"21/17/13"},
+    "22":{"Spirited":"22/16/10","Reliable":"22/17/11","Unreliable":"22/18/13"},"23":{"Spirited":"23/17/11","Reliable":"23/18/12","Unreliable":"23/19/14"},
+    "24":{"Spirited":"24/17/11","Reliable":"24/18/12","Unreliable":"24/19/14"},"25":{"Spirited":"25/18/12","Reliable":"25/19/13","Unreliable":"25/20/15"}
+  },
+  "sourceCorrections": [
+    { "context": "Table 5 / Late War / USA / Infantry", "rawRoll": 2, "resolution": "Trained", "reason": "The source table leaves roll 2 unassigned between Green 1 and Trained 3-5; normalized to the adjacent Trained band so every 1D10 result resolves exactly once." }
+  ]
+}

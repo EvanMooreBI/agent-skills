@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+  <base target="_top">
+  <style>
+    @page { size: Letter landscape; margin: 0.25in; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Helvetica, Arial, sans-serif; }
+    .page { display: block; width: 10.5in; height: 8in; break-after: page; page-break-after: always; }
+    .page:last-child { break-after: auto; page-break-after: auto; }
+  </style>
+</head>
+<body>
+<?
+  var W = labelConfig.widthPt, H = labelConfig.heightPt, DIVIDER = labelConfig.dividerYPt;
+  var TEXT_MAX = labelConfig.textMaxWidthPt, SCALE = labelConfig.horizontalTextScale;
+  var X_CORPS = 0, X_DIVISION = 96, X_UNIT = 174, ROW_Y = 32, ROW_STEP = 99;
+  function xml(v) { return String(v || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;'); }
+  function width(v, size) { return String(v || '').length * size * 0.5 * SCALE; }
+  function text(v, x, y, name) {
+    if (!v) return '';
+    var size = 9;
+    if (name) while (size > 7 && width(v,size) > TEXT_MAX) size -= 0.25;
+    var fit = !name && width(v,size) > TEXT_MAX ? ' textLength="' + (TEXT_MAX / SCALE).toFixed(3) + '" lengthAdjust="spacingAndGlyphs"' : '';
+    var transform = 'translate(' + x + ' 0) scale(' + SCALE + ' 1) translate(' + (-x) + ' 0)';
+    return '<text x="' + x + '" y="' + y + '" fill="#fff" font-family="Helvetica, Arial, sans-serif" font-size="' + size + '" font-weight="700" text-anchor="middle" transform="' + transform + '"' + fit + '>' + xml(v) + '</text>';
+  }
+  function base(x,y) { return '<rect x="' + x + '" y="' + y + '" width="' + W + '" height="' + H + '" fill="#000" stroke="#fff" stroke-width="1"/><line x1="' + x + '" y1="' + (y+DIVIDER) + '" x2="' + (x+W) + '" y2="' + (y+DIVIDER) + '" stroke="#fff" stroke-width="1" stroke-dasharray="4 3"/>'; }
+  function label(l,x,y) {
+    if (!l) return '';
+    var s = '<g>' + base(x,y);
+    if (l.role === 'corps') { s += text(l.name,x+36,y+73.5,true) + (l.exceptional ? text('E',x+36,y+84.5,false) : ''); }
+    else if (l.role === 'division') { s += text(l.parent,x+36,y+62.5,false) + text(l.name,x+36,y+73.5,true) + (l.exceptional ? text('E',x+36,y+84.5,false) : ''); }
+    else if (l.role === 'division-row') { s += text(l.name,x+36,y+73.5,true) + (l.exceptional ? text('E',x+36,y+84.5,false) : ''); }
+    else if (l.role === 'artillery') { s += text(l.parent,x+36,y+62.5,false) + text(l.name,x+36,y+73.5,true) + text(l.ratings,x+36,y+84.5,false); }
+    else { s += text(l.parent,x+36,y+62.5,false) + text(l.name,x+36,y+73.5,true) + text(l.ratings,x+36,y+84.5,false); }
+    return s + '</g>';
+  }
+  function connectors(y,hasUnits) {
+    var cy=y+45, s='<g stroke="#8a8a8a" stroke-width="1.5" fill="none">';
+    s += '<line x1="' + (X_CORPS+W) + '" y1="' + cy + '" x2="' + X_DIVISION + '" y2="' + cy + '"/>';
+    if (hasUnits) s += '<line x1="' + (X_DIVISION+W) + '" y1="' + cy + '" x2="' + X_UNIT + '" y2="' + cy + '"/>';
+    return s + '</g>';
+  }
+  function pageSvg(page) {
+    var s='<svg class="page" width="10.5in" height="8in" viewBox="0 0 756 576" xmlns="http://www.w3.org/2000/svg">';
+    s += '<text x="0" y="14" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700">' + xml(page.header) + '</text>';
+    var row=0;
+    for (var seg=0;seg<(page.segments||[]).length;seg++) {
+      var segment=page.segments[seg], start=ROW_Y+row*ROW_STEP, count=segment.rows.length;
+      s += label(segment.corps,X_CORPS,start) + label(segment.division,X_DIVISION,start);
+      for (var r=0;r<count;r++) {
+        var y=start+r*ROW_STEP, rendered=segment.rows[r], units=rendered.units||[];
+        if (r === 0) s += connectors(y,units.length>0);
+        for (var u=0;u<units.length;u++) s += label(units[u],X_UNIT+u*78,y);
+      }
+      row += count;
+    }
+    if ((page.dismounted||[]).length) {
+      s += '<text x="0" y="28" font-family="Helvetica, Arial, sans-serif" font-size="10" font-style="italic" font-weight="700">' + (page.dismountedContinued ? 'Dismounted Cavalry - Continued' : 'Dismounted Cavalry') + '</text>';
+      for (var d=0;d<page.dismounted.length;d++) s += label(page.dismounted[d],d*78,40);
+    }
+    return s+'</svg>';
+  }
+?>
+<? for (var i=0;i<pages.length;i++) { ?>
+  <?!= pageSvg(pages[i]) ?>
+<? } ?>
+</body>
+</html>

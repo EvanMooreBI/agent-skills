@@ -1,0 +1,60 @@
+Side,FullName,Roles,Arms,Theatre,Period,Battle,Year,SourceUrl,Historical
+USA,Irvin McDowell,Division|Brigade,Infantry|Cavalry,Eastern,Early War,First Manassas,1861,https://www.nps.gov/mana/learn/historyculture/union-order-of-battle-first-manassas.htm,TRUE
+USA,Daniel Tyler,Division|Brigade,Infantry,Eastern,Early War,First Manassas,1861,https://www.nps.gov/mana/learn/historyculture/union-order-of-battle-first-manassas.htm,TRUE
+USA,David Hunter,Division|Brigade,Infantry,Eastern,Early War,First Manassas,1861,https://www.nps.gov/mana/learn/historyculture/union-order-of-battle-first-manassas.htm,TRUE
+USA,Samuel P. Heintzelman,Division|Brigade,Infantry,Eastern,Early War,First Manassas,1861,https://www.nps.gov/mana/learn/historyculture/union-order-of-battle-first-manassas.htm,TRUE
+USA,William T. Sherman,Division|Brigade|Regiment,Infantry,Both,All,First Manassas and Atlanta,1861-1864,https://www.nps.gov/mana/learn/historyculture/union-order-of-battle-first-manassas.htm,TRUE
+USA,William F. Barry,Artillery,Artillery,Both,All,First Manassas and Atlanta,1861-1864,https://www.nps.gov/mana/learn/historyculture/union-order-of-battle-first-manassas.htm,TRUE
+USA,Alonzo H. Cushing,Battery,Artillery,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,Francis De Gress,Battery,Artillery,Western,Mid War|Late War,Kennesaw Mountain,1864,https://www.nps.gov/kemo/learn/historyculture/union-order-of-battle.htm,TRUE
+USA,Joshua T. Owen,Brigade|Regiment,Infantry,Eastern,All,Army of the Potomac,1861-1864,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,Benjamin Harrison,Brigade|Regiment,Infantry,Western,Mid War|Late War,Atlanta Campaign,1863-1865,https://www.nps.gov/kemo/learn/historyculture/union-order-of-battle.htm,TRUE
+USA,George H. Thomas,Division|Brigade,Infantry,Western,All,Mill Springs,1862,https://www.nps.gov/misp/learn/historyculture/order-of-battle-union.htm,TRUE
+USA,Albin F. Schoepf,Division|Brigade,Infantry,Western,Early War,Mill Springs,1862,https://www.nps.gov/misp/learn/historyculture/order-of-battle-union.htm,TRUE
+USA,Speed S. Fry,Brigade|Regiment,Infantry,Western,Early War,Mill Springs,1862,https://www.nps.gov/misp/learn/historyculture/order-of-battle-union.htm,TRUE
+USA,George G. Meade,Division|Brigade,Infantry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,John F. Reynolds,Division|Brigade,Infantry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,Winfield S. Hancock,Division|Brigade,Infantry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,John Sedgwick,Division|Brigade,Infantry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,George Sykes,Division|Brigade,Infantry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,Alfred Pleasonton,Division|Brigade,Cavalry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,John Buford,Division|Brigade,Cavalry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,David M. Gregg,Division|Brigade,Cavalry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,Henry J. Hunt,Artillery|Brigade,Artillery,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,Oliver O. Howard,Division|Brigade,Infantry,Both,All,Gettysburg and Atlanta,1863-1864,https://www.nps.gov/gett/learn/historyculture/aop-orderofbattle.htm,TRUE
+USA,James B. McPherson,Division|Brigade,Infantry,Western,Mid War,Kennesaw Mountain,1864,https://www.nps.gov/kemo/learn/historyculture/union-order-of-battle.htm,TRUE
+USA,John M. Schofield,Division|Brigade,Infantry,Western,Late War,Kennesaw Mountain,1864,https://www.nps.gov/kemo/learn/historyculture/union-order-of-battle.htm,TRUE
+USA,James H. Wilson,Division|Brigade,Cavalry,Both,Late War,Appomattox,1865,https://www.nps.gov/apco/order-of-battle.htm,TRUE
+USA,Wesley Merritt,Division|Brigade,Cavalry,Eastern,Late War,Appomattox,1865,https://www.nps.gov/apco/order-of-battle.htm,TRUE
+USA,Charles Griffin,Division|Brigade,Infantry,Eastern,Late War,Appomattox,1865,https://www.nps.gov/apco/order-of-battle.htm,TRUE
+USA,Horatio G. Wright,Division|Brigade,Infantry,Eastern,Late War,Appomattox,1865,https://www.nps.gov/apco/order-of-battle.htm,TRUE
+USA,Romeyn B. Ayres,Division|Brigade,Infantry,Eastern,Late War,Appomattox,1865,https://www.nps.gov/apco/order-of-battle.htm,TRUE
+USA,Charles S. Wainwright,Artillery|Brigade,Artillery,Eastern,Late War,Appomattox,1865,https://www.nps.gov/apco/order-of-battle.htm,TRUE
+CSA,Pierre G. T. Beauregard,Division|Brigade,Infantry,Eastern,Early War,First Manassas,1861,https://www.nps.gov/mana/learn/historyculture/confederate-order-of-battle-first-manassas.htm,TRUE
+CSA,Joseph E. Johnston,Division|Brigade,Infantry,Both,All,First Manassas and Atlanta,1861-1864,https://www.nps.gov/mana/learn/historyculture/confederate-order-of-battle-first-manassas.htm,TRUE
+CSA,Thomas J. Jackson,Division|Brigade,Infantry,Eastern,Early War,First Manassas,1861,https://www.nps.gov/mana/learn/historyculture/confederate-order-of-battle-first-manassas.htm,TRUE
+CSA,James Longstreet,Division|Brigade,Infantry,Eastern,All,First Manassas and Appomattox,1861-1865,https://www.nps.gov/mana/learn/historyculture/confederate-order-of-battle-first-manassas.htm,TRUE
+CSA,Milledge L. Bonham,Brigade|Regiment,Infantry,Eastern,Early War,First Manassas,1861,https://www.nps.gov/mana/learn/historyculture/confederate-order-of-battle-first-manassas.htm,TRUE
+CSA,Felix K. Zollicoffer,Division|Brigade,Infantry,Western,Early War,Mill Springs,1862,https://www.nps.gov/misp/learn/historyculture/order-of-battle-confederate.htm,TRUE
+CSA,George B. Crittenden,Division|Brigade,Infantry,Western,Early War,Mill Springs,1862,https://www.nps.gov/misp/learn/historyculture/order-of-battle-confederate.htm,TRUE
+CSA,William H. Carroll,Brigade|Regiment,Infantry,Western,Early War,Mill Springs,1862,https://www.nps.gov/misp/learn/historyculture/order-of-battle-confederate.htm,TRUE
+CSA,Robert E. Lee,Division|Brigade,Infantry,Eastern,All,Gettysburg and Appomattox,1863-1865,https://www.nps.gov/gett/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,Richard S. Ewell,Division|Brigade,Infantry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,A. P. Hill,Division|Brigade,Infantry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,J. E. B. Stuart,Division|Brigade,Cavalry,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,John B. Hood,Division|Brigade,Infantry,Both,All,Gettysburg and Atlanta,1863-1864,https://www.nps.gov/gett/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,William N. Pendleton,Artillery|Brigade,Artillery,Eastern,Mid War,Gettysburg,1863,https://www.nps.gov/gett/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,William J. Hardee,Division|Brigade,Infantry,Western,All,Kennesaw Mountain,1864,https://www.nps.gov/kemo/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,Leonidas Polk,Division|Brigade,Infantry,Western,Mid War,Kennesaw Mountain,1864,https://www.nps.gov/kemo/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,Joseph Wheeler,Division|Brigade,Cavalry,Western,All,Kennesaw Mountain,1864,https://www.nps.gov/kemo/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,William W. Mackall,Division|Brigade,Infantry,Western,Late War,Bentonville,1865,https://historicsites.nc.gov/all-sites/bentonville-battlefield/history/road-bentonville,TRUE
+CSA,Wade Hampton,Division|Brigade,Cavalry,Both,Late War,Bentonville,1865,https://historicsites.nc.gov/all-sites/bentonville-battlefield/history/road-bentonville,TRUE
+CSA,John B. Gordon,Division|Brigade,Infantry,Eastern,Late War,Appomattox,1865,https://www.nps.gov/apco/order-of-battle.htm,TRUE
+CSA,Richard H. Anderson,Division|Brigade,Infantry,Eastern,Late War,Appomattox,1865,https://www.nps.gov/apco/order-of-battle.htm,TRUE
+CSA,Fitzhugh Lee,Division|Brigade,Cavalry,Eastern,Late War,Appomattox,1865,https://www.nps.gov/apco/order-of-battle.htm,TRUE
+CSA,Ruben Lindsay Walker,Artillery|Brigade,Artillery,Eastern,Late War,Appomattox,1865,https://www.nps.gov/apco/order-of-battle.htm,TRUE
+CSA,Edward Porter Alexander,Artillery,Artillery,Both,All,Gettysburg and Chickamauga,1862-1865,https://www.nps.gov/gett/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,John Pelham,Battery,Artillery,Eastern,Early War|Mid War,Army of Northern Virginia,1861-1863,https://www.nps.gov/gett/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,Francis A. Shoup,Battery,Artillery,Western,Mid War|Late War,Atlanta Campaign,1863-1864,https://www.nps.gov/kemo/learn/historyculture/confederate-order-of-battle.htm,TRUE
+CSA,William R. Terry,Brigade|Regiment,Infantry,Eastern,All,Army of Northern Virginia,1861-1865,https://www.nps.gov/apco/order-of-battle.htm,TRUE
+CSA,Patrick R. Cleburne,Division|Brigade|Regiment,Infantry,Western,All,Army of Tennessee,1861-1864,https://www.nps.gov/kemo/learn/historyculture/confederate-order-of-battle.htm,TRUE

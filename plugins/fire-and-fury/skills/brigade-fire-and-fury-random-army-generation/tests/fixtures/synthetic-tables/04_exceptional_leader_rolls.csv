@@ -1,0 +1,61 @@
+period,side,d10_roll,exceptional_leader
+Early War,USA,1,false
+Early War,USA,2,false
+Early War,USA,3,false
+Early War,USA,4,false
+Early War,USA,5,false
+Early War,USA,6,false
+Early War,USA,7,false
+Early War,USA,8,false
+Early War,USA,9,true
+Early War,USA,10,true
+Early War,CSA,1,false
+Early War,CSA,2,false
+Early War,CSA,3,false
+Early War,CSA,4,false
+Early War,CSA,5,false
+Early War,CSA,6,false
+Early War,CSA,7,false
+Early War,CSA,8,false
+Early War,CSA,9,true
+Early War,CSA,10,true
+Mid-War,USA,1,false
+Mid-War,USA,2,false
+Mid-War,USA,3,false
+Mid-War,USA,4,false
+Mid-War,USA,5,false
+Mid-War,USA,6,false
+Mid-War,USA,7,false
+Mid-War,USA,8,false
+Mid-War,USA,9,true
+Mid-War,USA,10,true
+Mid-War,CSA,1,false
+Mid-War,CSA,2,false
+Mid-War,CSA,3,false
+Mid-War,CSA,4,false
+Mid-War,CSA,5,false
+Mid-War,CSA,6,false
+Mid-War,CSA,7,false
+Mid-War,CSA,8,false
+Mid-War,CSA,9,true
+Mid-War,CSA,10,true
+Late War,USA,1,false
+Late War,USA,2,false
+Late War,USA,3,false
+Late War,USA,4,false
+Late War,USA,5,false
+Late War,USA,6,false
+Late War,USA,7,false
+Late War,USA,8,true
+Late War,USA,9,true
+Late War,USA,10,true
+Late War,CSA,1,false
+Late War,CSA,2,false
+Late War,CSA,3,false
+Late War,CSA,4,false
+Late War,CSA,5,false
+Late War,CSA,6,false
+Late War,CSA,7,false
+Late War,CSA,8,false
+Late War,CSA,9,true
+Late War,CSA,10,true

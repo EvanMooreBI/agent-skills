@@ -1,0 +1,10 @@
+{
+  "name": "fire-and-fury",
+  "displayName": "Fire and Fury Armies",
+  "version": "1.0.0",
+  "description": "Generate random Brigade and Regimental Fire and Fury armies with printable unit-label PDFs and auditable roll logs.",
+  "author": { "name": "Evan Moore", "url": "https://github.com/EvanMooreBI" },
+  "repository": "https://github.com/EvanMooreBI/agent-skills",
+  "license": "MIT",
+  "keywords": ["wargaming", "fire-and-fury", "american-civil-war", "army-generator", "labels"]
+}

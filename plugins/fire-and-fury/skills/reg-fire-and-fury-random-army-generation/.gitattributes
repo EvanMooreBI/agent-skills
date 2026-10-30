@@ -1,0 +1,2 @@
+# Keep the portable layout helper identical to the Brigade package.
+/scripts/formation-layout.js -text

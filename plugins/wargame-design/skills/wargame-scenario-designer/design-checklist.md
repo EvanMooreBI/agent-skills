@@ -12,12 +12,20 @@ Run through this checklist after drafting a scenario. Every unchecked item is a 
 
 For Brigade Fire and Fury 2nd Edition, first apply [the mandatory system reference](references/brigade-fire-and-fury.md). Its map prerequisite overrides the geometry, spacing and text-only setup checks below: with a completed map, verify those checks against it; with a pending map, mark them deferred and require sourced relative descriptions plus a separate map-agent handoff. Do not claim setup readiness or validated contact timing for a pending map. Other systems retain the generic checks.
 
+## Fire and Fury stands required
+
+Apply to Brigade Fire and Fury 2nd Edition and Regimental Fire and Fury:
+
+- [ ] A Stands required table follows [its template](references/fire-and-fury-stands-required.md) and the system's row order.
+- [ ] Every count matches the OOB. Rows that neither side uses are absent, and a side with none of a shown type has 0.
+- [ ] Artillery is one gun-stand row with no limber rows or limber counts. Each Total sums its column.
+
 ## Brigade Fire and Fury 2nd Edition presentation
 
 Apply only to that system:
 
 - [ ] All commands use the required commander line, six-column OOB, single-paragraph Effectiveness header and native bulleted notes.
-- [ ] Combat Strength and numeric Heavy Casualties summaries match the OOB; miniatures gun counts do not add limbers.
+- [ ] Combat Strength and numeric Heavy Casualties summaries match the OOB.
 - [ ] The full rules name, reinforcing group terminology, feet for the table, and inches for valid mapped distances are used.
 - [ ] Every table-edge location or entry measurement identifies its edge, starting reference and direction; no raw x/y grid or stale pending-map geometry remains.
 - [ ] VP conditions are individual native bullets; approved casualty/control templates have scenario-specific variables and bold lead-ins intact.
