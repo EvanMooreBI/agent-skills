@@ -2,14 +2,16 @@
 name: claude-subagent-orchestration
 description: Use when Claude Code starts a task larger than a one-line edit, comment update, or merge. Claude Code only. Routes bounded work to a light Codex model and review, analysis, and judgment-heavy work to a strong Codex model, sets reasoning effort per task, lets either write code in a git worktree when the orchestrator enables it, and falls back to Claude subagents when Codex is unavailable.
 license: MIT
-compatibility: Claude Code with the Codex CLI signed in to a ChatGPT plan, in a git repository. Commands are given for PowerShell and bash.
+compatibility: Claude Code with the Codex CLI and Python 3, in a git repository. Codex is billed to a ChatGPT plan, or to an OpenAI API key when an administrator locks the computer to API billing. Commands are given for PowerShell and bash. Tested only on Windows 11 with Codex CLI 0.163.0.
 metadata:
   author: EvanMooreBI
-  version: "1.0.0"
+  version: "1.2.0"
 ---
 # Subagent Orchestration
 
-The main thread keeps the model the user chose at prompt start and owns planning, decisions, enabling writes, reading every diff, final verification, commits, and merges. Send work to a subagent only when it improves quality or costs fewer Claude tokens than doing it in the main thread. Codex runs on the user's ChatGPT plan, so a Codex call costs Claude only the summary it reads back.
+The main thread keeps the model the user chose at prompt start and owns planning, decisions, enabling writes, reading every diff, final verification, commits, and merges. Send work to a subagent only when it improves quality or costs fewer Claude tokens than doing it in the main thread. Codex is billed to the user's ChatGPT plan unless an administrator locked the computer to API billing, so a Codex call costs Claude only the summary it reads back. See [Billing](#billing).
+
+This skill has been tested only on Windows 11 with Codex CLI 0.163.0. On Linux or macOS, tell the user once that it is untested there, and point them to "What was tested" in the agent-skills README.
 
 ## Skip
 
@@ -33,18 +35,18 @@ Run once per session, before the first delegation.
 PowerShell:
 
 ```powershell
-codex login status
+python '<skill-dir>/scripts/codex_guard.py' --status
 (Get-Content (Join-Path $HOME '.codex/models_cache.json') -Raw | ConvertFrom-Json).models.slug
 ```
 
 bash:
 
 ```bash
-codex login status
+python3 '<skill-dir>/scripts/codex_guard.py' --status
 python3 -c "import json,pathlib; print('\n'.join(m['slug'] for m in json.loads((pathlib.Path.home()/'.codex/models_cache.json').read_text())['models']))"
 ```
 
-Codex is available when login reports "Logged in using ChatGPT" and both model slugs appear in the list. An API-key login bills per token, so treat it as unavailable unless the user has approved API spending.
+`<skill-dir>` is this skill's base directory. Codex is available when `--status` exits 0 and both model slugs appear in the list. `--status` prints the billing mode, the reason for it, and a billing line such as "Billing: ChatGPT plan". Show that billing line to the user once per session, before the first delegation. Exit code 3 means the [billing guard](#billing) refused, and the output says why.
 
 ### Setup
 
@@ -53,7 +55,9 @@ When a preflight check fails, tell the user which one failed and what it costs t
 | Check fails | Fix |
 |---|---|
 | `codex` is not found | Offer to install the Codex CLI with `npm install -g @openai/codex`. Install only after the user agrees. If `npm` is missing, point the user to the Node.js installer or the Codex install instructions at https://github.com/openai/codex. |
-| Not logged in, or logged in with an API key | Ask the user to run `codex login` in their own terminal and choose ChatGPT sign-in. The login opens a browser, so the agent cannot complete it. |
+| ChatGPT mode, and Codex is not signed in with ChatGPT | Ask the user to run `codex login` in their own terminal and choose ChatGPT sign-in. The login opens a browser, so the agent cannot complete it. |
+| API mode, and Codex has no API key | Tell the user to sign in in their own terminal with the commands in the README, which pipe the key to `codex login --with-api-key`. The README recommends keeping the key in the system keyring. Never ask for the key, and never set it. |
+| The user wants the other billing mode | Point the user to the Billing section of the agent-skills README. Changing the mode needs an elevated or `sudo` command, which the user runs. |
 | A default model slug is missing | Show the slugs that are listed and ask which to use for the light and strong roles. Use those slugs for the rest of the session. |
 | The working folder is not a git repository | Delegation needs a repository for worktrees and review. Run read-only delegations only, or ask the user to initialize a repository. |
 
@@ -67,8 +71,10 @@ Rerun the preflight after any fix. If the user declines setup, use the fallbacks
 | Light | Luna, read-only | Searches that need more than about three Grep or Glob rounds, facts from large or many files, log triage, doc-drift candidate lists, formatting and extraction, tickets from an approved spec | `Explore` agent, or `general-purpose` agent with `model: haiku` |
 | Implement, bounded | Luna, workspace-write in a worktree | The coding rows of the Luna table | Claude `Agent` with `model` omitted, so it inherits |
 | Implement, judgment | Sol, workspace-write in a worktree | Features spanning files, unfamiliar code, tricky bugs, root-cause work, and work sent on from Luna | Main thread |
-| Review | Sol, `codex exec review`, read-only | The finished diff, before the task is reported done | A code-review subagent, such as `feature-dev:code-reviewer` from the `feature-dev` plugin when it is installed, otherwise a `general-purpose` agent told to review the diff |
-| Analysis | Sol, read-only | Requirements, design, and task-list critique, and tickets that must decide scope, dependencies, priorities, or missing acceptance criteria | `general-purpose` agent |
+| Review | Sol, `codex exec review`, read-only | The finished diff, before the task is reported done | `fallback-code-reviewer` when installed, otherwise a code-review subagent such as `feature-dev:code-reviewer` from the `feature-dev` plugin, otherwise a `general-purpose` agent told to review the diff |
+| Analysis | Sol, read-only | Requirements, design, and task-list critique, and tickets that must decide scope, dependencies, priorities, or missing acceptance criteria | `fallback-adversarial-reviewer` when installed, otherwise a `general-purpose` agent |
+
+A `fallback-*` agent is installed when the Agent tool lists it. These agents run Sonnet at `high` effort, skip CLAUDE.md files, and add a severity to each finding. Their prompt follows the Prompt contract without its first line and must state any repository rules the review depends on. An output that ends with `PARTIAL` did not finish; rerun it on the parts it lists.
 
 ## Write access
 
@@ -153,11 +159,52 @@ The worktree holds all partial work, so the root checkout never changes.
 - Put related questions into one Luna call instead of several.
 - Run independent delegations at the same time.
 
+## Billing
+
+Codex's machine requirements file decides who pays for Claude's Codex runs:
+
+| OS | File |
+|---|---|
+| Windows | `%ProgramData%\OpenAI\Codex\requirements.toml` |
+| Linux, macOS | `/etc/codex/requirements.toml` |
+
+| `allowed_login_methods` in that file | Claude's Codex runs bill |
+|---|---|
+| `["api"]`, and only an administrator account can change the file | The OpenAI API, per token |
+| Anything else, or no file | The ChatGPT plan, within its usage limits |
+
+The skill reads the mode from nowhere else: not a user file, a repository file, or an environment variable. Anything running as the user can write those, and only an administrator can write the lock. Codex enforces the same file for every Codex client on the computer.
+
+Start every Codex run through `scripts/codex_guard.py`, never through `codex` directly. Before each run the wrapper:
+
+1. Reads the lock. On Windows it runs `scripts/Set-CodexBillingLock.ps1 -Check -Mode api` to confirm that only Administrators or SYSTEM can change an `["api"]` lock. On Linux and macOS it confirms that root owns the file and its folders and nobody else can write them. A lock that fails counts as no lock.
+2. Removes API credentials from the environment Codex gets: `CODEX_ACCESS_TOKEN` and every `OPENAI_*` and `AZURE_OPENAI_*` variable, plus `CODEX_API_KEY` in ChatGPT mode. In API mode it keeps `CODEX_API_KEY` if the user set it.
+3. Pins the sign-in and provider: `-c forced_login_method=chatgpt` or `=api`, and `-c model_provider=openai`.
+4. Refuses `--oss`, `--local-provider`, `--profile`, `--dangerously-bypass-approvals-and-sandbox` and its alias `--yolo`, and `-c` overrides of the provider, sign-in method, or base URLs.
+5. Checks that Codex will use the sign-in that the mode needs.
+6. Prints who pays, for example "Billing: ChatGPT plan" or "Billing: OpenAI API, per token, key ending abcd". When the key comes from `CODEX_API_KEY`, it also warns that every command Claude runs can read the key. Pass that warning on to the user.
+
+The wrapper exits with code 3 when it refuses, and Codex does not start. Treat that as Codex being unavailable and use the fallbacks.
+
+Two Codex behaviors are the reason for steps 2, 3, and 5:
+
+- `codex exec` prefers `CODEX_API_KEY` over the ChatGPT sign-in, but `codex login status` does not show that variable. A status check alone does not stop API billing.
+- When Codex sees `forced_login_method` together with the other kind of credential, it deletes every stored sign-in and exits. The wrapper removes keys first in ChatGPT mode, and in API mode it pins `api` only when the API key is the credential Codex loads first.
+
+Never do any of these:
+
+- Write or edit the machine lock or `~/.codex/auth.json`, or run the lock script without `-Check`.
+- Ask the user for an API key, or set `CODEX_API_KEY` or `OPENAI_API_KEY`.
+- Read, print, or copy an API key from the environment, `~/.codex/auth.json`, or the system keyring.
+- Run `codex login`, or start Codex without the wrapper.
+
+The setup steps for each mode, and their limits, are in the Billing section of the agent-skills README.
+
 ## Commands
 
 Write the final message to a file in Claude Code's scratchpad directory with `-o`, and send the event stream to a log. Read the result file. Read the log only when the exit code is not 0. Set `<model>` and `<effort>` from Models, Routing, and Effort.
 
-Every command carries two guards:
+Every command runs through the [billing](#billing) wrapper and carries two more guards:
 
 - `--disable apps` removes the ChatGPT app connectors, such as Gmail, GitHub, Google Drive, and Notion. The sandbox does not limit those tools, and a delegated run must not act outside the repository. The flag lasts for that one run and does not change `~/.codex/config.toml`, so Codex runs started without it, including the Codex app, keep their apps.
 - `-c agents.max_depth=0` makes Codex subagent spawns fail. This is the guard that stops a delegated run from starting its own subagents. `--disable multi_agent` does not block spawning in Codex CLI 0.163, so do not rely on it.
@@ -166,14 +213,14 @@ Read-only run, PowerShell:
 
 ```powershell
 $out = Join-Path '<scratchpad>' '<model>-<slug>.md'
-codex exec -m <model> -c model_reasoning_effort="<effort>" -c agents.max_depth=0 --disable apps -s read-only --ephemeral --color never -C '<repo>' -o $out '<prompt>' *> "$out.log"
+$null | python '<skill-dir>/scripts/codex_guard.py' exec -m <model> -c model_reasoning_effort=<effort> -c agents.max_depth=0 --disable apps -s read-only --ephemeral --color never -C '<repo>' -o $out '<prompt>' *> "$out.log"
 ```
 
 Read-only run, bash:
 
 ```bash
 out='<scratchpad>/<model>-<slug>.md'
-codex exec -m <model> -c model_reasoning_effort="<effort>" -c agents.max_depth=0 --disable apps -s read-only --ephemeral --color never -C '<repo>' -o "$out" '<prompt>' > "$out.log" 2>&1
+python3 '<skill-dir>/scripts/codex_guard.py' exec -m <model> -c model_reasoning_effort=<effort> -c agents.max_depth=0 --disable apps -s read-only --ephemeral --color never -C '<repo>' -o "$out" '<prompt>' < /dev/null > "$out.log" 2>&1
 ```
 
 For a write run, use the same command with `-s workspace-write` and `-C '<worktree>'`.
@@ -182,16 +229,19 @@ Review, run from the repository or worktree root. Use `--uncommitted` for workin
 
 ```powershell
 $out = Join-Path '<scratchpad>' 'sol-review-<slug>.md'
-codex exec -s read-only -c agents.max_depth=0 --disable apps review -m <strong-model> -c model_reasoning_effort="<effort>" --base <base> --ephemeral -o $out *> "$out.log"
+$null | python '<skill-dir>/scripts/codex_guard.py' exec -s read-only -c agents.max_depth=0 --disable apps review -m <strong-model> -c model_reasoning_effort=<effort> --base <base> --ephemeral -o $out *> "$out.log"
 ```
 
-In bash, replace the redirect with `> "$out.log" 2>&1`.
+In bash, drop `$null | `, use `python3`, and replace the redirect with `< /dev/null > "$out.log" 2>&1`.
 
 `-s read-only`, `-c agents.max_depth=0`, and `--disable apps` go before `review` because they are `exec` options. Without `-s read-only`, review inherits any write-enabled sandbox from the user or repository config.
+
+Every command closes stdin, with `$null |` in PowerShell or `< /dev/null` in bash. When stdin is open but not a terminal, as in a background run, `codex exec` prints `Reading additional input from stdin...` and waits for input that never comes.
 
 A prompt must not begin with `-`. Codex parses a leading `-nosubagents` as an unknown flag and exits with code 2.
 
 - Use `run_in_background` for runs expected to take more than 2 minutes, and wait for the completion notice instead of polling. Write runs and Sol runs usually take several minutes, so run them in the background.
+- Stopping a background task stops its shell, but `codex.exe` can keep running and keep editing the worktree. After you stop a run, find any leftover `codex exec` process and stop it before you start another run in the same worktree. In PowerShell: `Get-CimInstance Win32_Process -Filter "Name like 'codex%'" | Where-Object CommandLine -like '*exec*' | Select-Object ProcessId, CreationDate, CommandLine`. Match the start time and command line to your run, then `Stop-Process -Id <id>`. Never stop Codex processes you did not start, such as the Codex app's `app-server`.
 - On a non-zero exit, read the last 5 lines of the log.
   - A usage-limit error means Codex is unavailable until the reset time it states. Switch to the fallbacks until then.
   - A sandbox startup error, such as `CreateProcessAsUserW failed: 5 (Access is denied.)` on Windows, means the Codex sandbox cannot run on this machine. Use the fallbacks for the rest of the session and tell the user once. Never retry without the sandbox.
@@ -238,4 +288,4 @@ Codex output is a lead, not a fact. Before acting on a claim, read only the cite
 
 ## Report
 
-End the task with one line that names the delegations that ran, the effort level of each, which ones wrote code, any partial runs and how each ended, any fallback used, and the merge status of each Codex branch.
+End the task with one line that names the billing mode, the delegations that ran, the effort level of each, which ones wrote code, any partial runs and how each ended, any fallback used, and the merge status of each Codex branch.
