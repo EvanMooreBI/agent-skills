@@ -285,12 +285,12 @@ def billing_line(mode: str, codex: str, env: dict[str, str]) -> str:
     if code == 0 and api_lines:
         return f"Billing: OpenAI API, per token, key ending {api_lines[0][-4:]}"
     raise Refused(f"the machine lock selects API billing, but Codex has no API key sign-in ({status}). "
-                  "In your own terminal, pipe the key to `codex login --with-api-key`. The README's key storage "
-                  "section shows how to keep it in the system keyring")
+                  "In your own terminal, pipe the key to `codex login --with-api-key`. "
+                  "The key storage section of references/billing.md shows how to keep it in the system keyring")
 
 
 ENV_KEY_WARNING = ("Warning: the API key comes from CODEX_API_KEY, so every command Claude runs can read it. "
-                   "The README's key storage section shows how to keep it in the system keyring instead")
+                   "The key storage section of references/billing.md shows how to keep it in the system keyring instead")
 
 
 def key_warning(mode: str, env: dict[str, str]) -> str | None:

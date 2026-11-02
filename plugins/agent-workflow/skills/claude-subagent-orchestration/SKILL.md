@@ -11,7 +11,7 @@ metadata:
 
 The main thread keeps the model the user chose at prompt start and owns planning, decisions, enabling writes, reading every diff, final verification, commits, and merges. Send work to a subagent only when it improves quality or costs fewer Claude tokens than doing it in the main thread. Codex is billed to the user's ChatGPT plan unless an administrator locked the computer to API billing, so a Codex call costs Claude only the summary it reads back. See [Billing](#billing).
 
-This skill has been tested only on Windows 11 with Codex CLI 0.163.0. On Linux or macOS, tell the user once that it is untested there, and point them to "What was tested" in the agent-skills README.
+This skill has been tested only on Windows 11 with Codex CLI 0.163.0. On Linux or macOS, tell the user once that it is untested there, and point them to "What was tested" in [references/billing.md](references/billing.md#what-was-tested).
 
 ## Skip
 
@@ -56,10 +56,10 @@ When a preflight check fails, tell the user which one failed and what it costs t
 |---|---|
 | `codex` is not found | Offer to install the Codex CLI with `npm install -g @openai/codex`. Install only after the user agrees. If `npm` is missing, point the user to the Node.js installer or the Codex install instructions at https://github.com/openai/codex. |
 | ChatGPT mode, and Codex is not signed in with ChatGPT | Ask the user to run `codex login` in their own terminal and choose ChatGPT sign-in. The login opens a browser, so the agent cannot complete it. |
-| API mode, and Codex has no API key | Tell the user to sign in in their own terminal with the commands in the README, which pipe the key to `codex login --with-api-key`. The README recommends keeping the key in the system keyring. Never ask for the key, and never set it. |
-| The user wants the other billing mode | Point the user to the Billing section of the agent-skills README. Changing the mode needs an elevated or `sudo` command, which the user runs. |
+| API mode, and Codex has no API key | Tell the user to sign in in their own terminal with the commands in [references/billing.md](references/billing.md#use-the-openai-api), which pipe the key to `codex login --with-api-key`. That page recommends keeping the key in the system keyring. Never ask for the key, and never set it. |
+| The user wants the other billing mode | Point the user to [references/billing.md](references/billing.md). Changing the mode needs an elevated or `sudo` command, which the user runs. |
 | A default model slug is missing | Show the slugs that are listed and ask which to use for the light and strong roles. Use those slugs for the rest of the session. |
-| The working folder is not a git repository | Delegation needs a repository for worktrees and review. Run read-only delegations only, or ask the user to initialize a repository. |
+| The working folder is not a git repository | `codex exec` refuses to start outside a repository, even read-only (verified on Codex CLI 0.163.0, 2026-11-01). Point `-C` at a repository, or ask the user to initialize one. Worktrees and review also need a repository. |
 
 Rerun the preflight after any fix. If the user declines setup, use the fallbacks for the rest of the session and say so once.
 
@@ -143,6 +143,7 @@ The worktree holds all partial work, so the root checkout never changes.
    - Sound but incomplete: commit the current state in the worktree as `wip(<slug>): codex checkpoint <n>`, then resume.
    - Wrong direction, such as edits outside scope, a broken design, or an unclear cause: read the diff, then discard back to the last checkpoint with `git -C <worktree> reset --hard` and `git -C <worktree> clean -fd`. Re-scope or reassign the work.
    - Blocked on a question: answer it from the spec, or ask the user, before any rerun.
+   - Only checks unmet, because Codex reports that its sandbox blocked the process that runs them: the main thread runs the checks. This is not a stop, so do not resume or reassign unless those checks fail.
 3. Resume with a fresh `codex exec` in the same worktree, not `codex exec resume`. The handoff prompt lists the met criteria, the unmet criteria, the failing check output, and the checkpoint commit. Choose the next agent by the cause of the stop:
    - Usage limit or timeout: the same model and effort, or a Claude `Agent` in the same worktree while Codex is unavailable.
    - An answered question: the same model and effort.
@@ -198,7 +199,9 @@ Never do any of these:
 - Read, print, or copy an API key from the environment, `~/.codex/auth.json`, or the system keyring.
 - Run `codex login`, or start Codex without the wrapper.
 
-The setup steps for each mode, and their limits, are in the Billing section of the agent-skills README.
+The optional Claude Code hook in `scripts/codex_billing_guard_hook.py` reads command text. It also blocks a command that only mentions Codex at the start of a line or after a separator such as `;`, even inside quotes, as in a heredoc, a multi-line commit message, or `--help` followed by a redirect. Put that text in a file and pass the file, for example with `git commit -F`. A plain `codex --version` passes.
+
+The setup steps for each mode, and their limits, are in [references/billing.md](references/billing.md).
 
 ## Commands
 
@@ -245,6 +248,7 @@ A prompt must not begin with `-`. Codex parses a leading `-nosubagents` as an un
 - On a non-zero exit, read the last 5 lines of the log.
   - A usage-limit error means Codex is unavailable until the reset time it states. Switch to the fallbacks until then.
   - A sandbox startup error, such as `CreateProcessAsUserW failed: 5 (Access is denied.)` on Windows, means the Codex sandbox cannot run on this machine. Use the fallbacks for the rest of the session and tell the user once. Never retry without the sandbox.
+- A run that starts but reports that its sandbox blocked a command, such as a test runner, PowerShell, or `git`, is not a startup error. Keep using Codex, and run the blocked checks in the main thread. Seen on Windows 11 with Codex CLI 0.163.0 (2026-11-01).
 
 ## Prompt contract
 
@@ -264,7 +268,7 @@ Every write prompt also states:
 3. Numbered acceptance criteria.
 4. The checks to run.
 5. "Do not commit. Do not edit files outside the listed scope."
-6. The output format: at most 40 lines. The first line is `STATUS: complete`, `STATUS: partial`, or `STATUS: blocked`. Then each criterion as met or unmet, the changed files, the check results, and any open questions.
+6. The output format: at most 40 lines. The first line is `STATUS: complete`, `STATUS: partial`, or `STATUS: blocked`. Then each criterion as met or unmet, the changed files, the check results, and any open questions. A check that Codex could not run is reported as not run, with the error.
 
 ## Remote sources
 

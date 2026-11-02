@@ -6,10 +6,14 @@ manifests, local-resource manifests, relative Markdown links, file types,
 sizes and path lengths, and markers of personal or third-party material that
 must not ship.
 
-Usage: python tools/validate_repo.py [--root DIR] [--private DIR]
+Usage: python tools/validate_repo.py [--root DIR] [--private DIR] [--deny-file FILE]
 
 --private names a folder of restricted files. Any file in the repository with
 the same SHA-256 as one of them is a finding.
+
+--deny-file names a text file with one extra regular expression per line, such
+as a maintainer's private names. Blank lines and lines starting with # are
+skipped. A line of a text file that matches one of them is a finding.
 
 Exit codes: 0 clean, 1 findings, 2 bad arguments.
 """
@@ -29,15 +33,9 @@ MAX_FILE_BYTES = 2 * 1024 * 1024
 MAX_PATH_CHARS = 150
 BLOCKED_SUFFIXES = {".pdf", ".ttf", ".otf", ".woff", ".woff2", ".zip", ".xlsx", ".xlsm", ".docx", ".pptx", ".epub"}
 TEXT_SUFFIXES = {".md", ".json", ".py", ".ps1", ".psm1", ".yml", ".yaml", ".txt", ".csv", ".js", ".gs", ".html", ".sh"}
-# Personal paths, private repository names, and retired third-party references.
+# Personal paths and email addresses. Maintainers add private names with --deny-file.
 DENY_PATTERNS = [
     re.compile(r"[A-Za-z]:\\Users\\", re.I),
-    re.compile(r"\bcrazy\b", re.I),
-    re.compile(r"\bdev-center\b", re.I),
-    re.compile(r"\bknowledge-center\b", re.I),
-    re.compile(r"private-skill-resources", re.I),
-    re.compile(r"\bWilkinson\b"),
-    re.compile(r"\bASL\b"),
     re.compile(r"@gmail\.com", re.I),
 ]
 RESOURCE_KEYS = {"id": str, "purpose": str, "required": bool, "whenMissing": str,
@@ -214,7 +212,8 @@ def check_plugins(root: Path, rel, findings: list[str]) -> list[Path]:
     return skills
 
 
-def check_files(root: Path, rel, findings: list[str], private_hashes: dict[str, str]) -> None:
+def check_files(root: Path, rel, findings: list[str], private_hashes: dict[str, str],
+                deny_patterns: list[re.Pattern[str]]) -> None:
     self_path = Path(__file__).resolve()
     for path in files_under(root):
         if path.stat().st_size > MAX_FILE_BYTES:
@@ -233,7 +232,7 @@ def check_files(root: Path, rel, findings: list[str], private_hashes: dict[str, 
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
         for number, line in enumerate(text.splitlines(), start=1):
-            for pattern in DENY_PATTERNS:
+            for pattern in deny_patterns:
                 if pattern.search(line):
                     findings.append(f"{rel(path)}:{number}: matches blocked marker {pattern.pattern!r}")
         if path.suffix.lower() == ".md":
@@ -262,6 +261,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parent.parent)
     parser.add_argument("--private", type=Path, help="folder of restricted files that must not appear here")
+    parser.add_argument("--deny-file", type=Path, help="file of extra regular expressions, one per line, that must not appear here")
     args = parser.parse_args(argv)
     root = args.root.resolve()
     if not root.is_dir():
@@ -273,13 +273,24 @@ def main(argv: list[str] | None = None) -> int:
         for path in files_under(args.private):
             private_hashes[hashlib.sha256(path.read_bytes()).hexdigest()] = path.name
 
+    deny_patterns = list(DENY_PATTERNS)
+    if args.deny_file:
+        if not args.deny_file.is_file():
+            parser.error(f"not a file: {args.deny_file}")
+        for line in args.deny_file.read_text(encoding="utf-8").splitlines():
+            if line.strip() and not line.lstrip().startswith("#"):
+                try:
+                    deny_patterns.append(re.compile(line.strip()))
+                except re.error as error:
+                    parser.error(f"bad pattern in {args.deny_file}: {line.strip()!r}: {error}")
+
     def rel(path: Path) -> str:
         return path.resolve().relative_to(root).as_posix()
 
     findings: list[str] = []
     for skill_dir in check_plugins(root, rel, findings):
         check_skill(skill_dir, rel, findings)
-    check_files(root, rel, findings, private_hashes)
+    check_files(root, rel, findings, private_hashes, deny_patterns)
     for finding in findings:
         print(finding)
     print(f"{len(findings)} finding(s)", file=sys.stderr)
