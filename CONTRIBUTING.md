@@ -59,6 +59,6 @@ The Fire and Fury skills list their own test commands in each skill's `README.md
 - files over 2 MB;
 - paths longer than 150 characters, which can break clones on Windows;
 - broken relative links;
-- personal paths;
+- personal paths and email addresses, plus any patterns passed with `--deny-file`;
 - secret files such as `.env`;
 - frontmatter that is not valid YAML, such as an unquoted value containing `: `. Install PyYAML for the full check.

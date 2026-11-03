@@ -24,9 +24,12 @@ try{
 
     $noTables=Join-Path $temp 'no-tables';$noTablesOutput=Join-Path $temp 'no-tables-output'
     [void][IO.Directory]::CreateDirectory($noTables);[void][IO.Directory]::CreateDirectory($noTablesOutput)
-    $message=& pwsh -NoProfile -File (Join-Path $skillRoot 'scripts/Generate-BrigadeFireAndFuryLabels.ps1') -RequestPath (Join-Path $PSScriptRoot 'fixtures/request-mid-war.json') -OutputDirectory $noTablesOutput -TablesPath $noTables 2>&1
+    # CI consoles add ANSI color codes and can wrap the error mid-word, so compare the plain text with all whitespace removed.
+    $env:NO_COLOR='1'
+    try{$message=& pwsh -NoProfile -File (Join-Path $skillRoot 'scripts/Generate-BrigadeFireAndFuryLabels.ps1') -RequestPath (Join-Path $PSScriptRoot 'fixtures/request-mid-war.json') -OutputDirectory $noTablesOutput -TablesPath $noTables 2>&1}finally{Remove-Item Env:NO_COLOR}
     if($LASTEXITCODE -eq 0){throw 'A random run without generator tables did not fail.'}
-    if(($message -join ' ') -notmatch "Set up your rulebook tables"){throw "Missing-tables message does not point to setup: $($message -join ' ')"}
+    $messageText=(($message -join ' ') -replace "`e\[[0-9;]*m",'')
+    if(($messageText -replace '\s','') -notmatch 'Setupyourrulebooktables'){throw "Missing-tables message does not point to setup: $messageText"}
     if(@(Get-ChildItem -LiteralPath $noTablesOutput).Count -ne 0){throw 'A failed random run published files.'}
     "TEST|random-without-tables-stops-with-setup-message|PASS"
 
