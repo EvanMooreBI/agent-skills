@@ -13,3 +13,7 @@ This repository contains no rulebook text, scenarios, maps, quick-reference shee
 The only rules data from a publisher in this repository is the Brigade Fire and Fury and Regimental Fire and Fury brigade effectiveness tables, included as play aids. They are of no use without the rules. The Regimental skill's army-generation tables (Tables 1 to 7 in `army-generation-rules.json`) are the author's own design and are not from any Fire and Fury rulebook. The Brigade Fire and Fury army-generator tables are not included. Users build them from photos of their own copy of the rulebook.
 
 Skills that can use material you own list it in their `local-resources.json`. You supply those files yourself and keep them outside this repository. See [CONTRIBUTING.md](CONTRIBUTING.md#local-resources).
+
+## Career Workbench source attribution
+
+Career Workbench includes modified MIT-licensed ResumeSkills source, copyright (c) 2026 Resume Skills. See its [notices](plugins/job-search/NOTICE.md) and [provenance inventory](plugins/job-search/provenance.json). Each derived skill retains its full upstream license and attribution. The restricted-material rules above concern rulebook and other content that is not licensed for this distribution; they do not prohibit source released under a compatible license with its notices preserved.

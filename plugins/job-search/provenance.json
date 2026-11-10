@@ -1,0 +1,161 @@
+{
+  "upstreamRepository": "https://github.com/Paramchoudhary/ResumeSkills",
+  "upstreamRevision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+  "skills": [
+    {
+      "name": "application-form-filler",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/application-form-filler/SKILL.md",
+      "upstreamSha256": "c5804ccbc6e34d05edd59a86f3246259a73f96f1fcd7ba253fd9e48c1ddca8d8"
+    },
+    {
+      "name": "career-changer-translator",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/career-changer-translator/SKILL.md",
+      "upstreamSha256": "d1b6d39a9031ef2c4b493c6cccf6227144621729f059044173b658200455eecc"
+    },
+    {
+      "name": "career-context-builder",
+      "origin": "New Career Workbench skill",
+      "source": "skills/job-finding/career-context-builder"
+    },
+    {
+      "name": "cold-email-writer",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/cold-email-writer/SKILL.md",
+      "upstreamSha256": "b8b576b5e917b68083efc8772db765843caef125dd5d9444b533ca23b9ad574b"
+    },
+    {
+      "name": "cover-letter-generator",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/cover-letter-generator/SKILL.md",
+      "upstreamSha256": "1b84e3d487f982700ab69fab1cf945fa785bf4a4266e8946e47401b1fe5ebc6c"
+    },
+    {
+      "name": "creative-portfolio-resume",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/creative-portfolio-resume/SKILL.md",
+      "upstreamSha256": "71301ed4cc3a4c4b026619d606762b72ac2724888884a711936e7ea85c4a54f5"
+    },
+    {
+      "name": "interview-prep-generator",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/interview-prep-generator/SKILL.md",
+      "upstreamSha256": "1c543ab0eb226b0e404fcbd4495e7322ae129c5cb940b248ae58656fd2e240d6"
+    },
+    {
+      "name": "job-description-analyzer",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/job-description-analyzer/SKILL.md",
+      "upstreamSha256": "9898051a4a54ddeb82115778e4dfe24dbf226a6457dcb7be6c94bddca15479d5"
+    },
+    {
+      "name": "job-market-pay-research",
+      "origin": "Dev Center local workflow; no counterpart in the inspected ResumeSkills revision",
+      "source": "skills/job-finding/job-market-pay-research"
+    },
+    {
+      "name": "job-posting-review",
+      "origin": "Dev Center local workflow; no counterpart in the inspected ResumeSkills revision",
+      "source": "skills/job-finding/job-posting-review"
+    },
+    {
+      "name": "linkedin-profile-optimizer",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/linkedin-profile-optimizer/SKILL.md",
+      "upstreamSha256": "3fffcd58f30fe045bcdf7e776417dfccb3061efd3ad15ec537b7e8c285547862"
+    },
+    {
+      "name": "offer-comparison-analyzer",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/offer-comparison-analyzer/SKILL.md",
+      "upstreamSha256": "3265a7bb36a9b8ffb986f5e5dec6de88578f45b28da0be493d4e86ce366cf95d"
+    },
+    {
+      "name": "portfolio-case-study-writer",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/portfolio-case-study-writer/SKILL.md",
+      "upstreamSha256": "b6b17fe94dd87ec68f3818bbfef3ce855a499dba7f1cbb1bb44aa920a9b0f84d"
+    },
+    {
+      "name": "reference-list-builder",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/reference-list-builder/SKILL.md",
+      "upstreamSha256": "ef4d0794277724c9476ae4d728a5192d975b64b6b01250cfa0d229839d99349a"
+    },
+    {
+      "name": "resume-ats-optimizer",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/resume-ats-optimizer/SKILL.md",
+      "upstreamSha256": "03ad07d45afa209a41f8a0acdfc4286bc61ededd8371ced5242b5caf97d86702"
+    },
+    {
+      "name": "resume-bullet-writer",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/resume-bullet-writer/SKILL.md",
+      "upstreamSha256": "49ea6a533a72112cc4935c40924830d13979b86321e593892a45244fef0a14fb"
+    },
+    {
+      "name": "resume-formatter",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/resume-formatter/SKILL.md",
+      "upstreamSha256": "387522dc9a48ea948fc44c73189fce0676dc12b694186d4d44957ae02bd6becf"
+    },
+    {
+      "name": "resume-quantifier",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/resume-quantifier/SKILL.md",
+      "upstreamSha256": "6cdf56f990ff1f67154ea99c256654d35eeb5048f13af76da396dcb3b9d2d68d"
+    },
+    {
+      "name": "resume-section-builder",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/resume-section-builder/SKILL.md",
+      "upstreamSha256": "63e9972a7b1b4a184f7f4e7a992f17c3590a0da19a4389631bdbbeb3b94dd68b"
+    },
+    {
+      "name": "resume-tailor",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/resume-tailor/SKILL.md",
+      "upstreamSha256": "96853a389e2043cd3cc46667b89576cd3755bbef2c72ebeafc486230609b0981"
+    },
+    {
+      "name": "resume-version-manager",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/resume-version-manager/SKILL.md",
+      "upstreamSha256": "ddf1acc97694e7710c9091dc547942a424f16601b2c8b35ce1c317f3b19b94f7"
+    },
+    {
+      "name": "salary-negotiation-prep",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/salary-negotiation-prep/SKILL.md",
+      "upstreamSha256": "efac612f8ab539a7946f77e6b0c6d820713283c309eee6daf36e3ed7a27a7088"
+    },
+    {
+      "name": "tech-resume-optimizer",
+      "origin": "ResumeSkills derivative",
+      "revision": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+      "source": "https://raw.githubusercontent.com/Paramchoudhary/ResumeSkills/74ae19e7c62b0516d1c298328e5544976c12da5d/skills/tech-resume-optimizer/SKILL.md",
+      "upstreamSha256": "38cbc83d7d143ec3432be19e8179c5992b55b20765c478f575b0200ed357339a"
+    }
+  ]
+}

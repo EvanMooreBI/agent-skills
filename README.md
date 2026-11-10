@@ -27,6 +27,12 @@ Agent skills for Claude Code, Codex, and Claude Cowork. Each skill is a folder w
 | [brigade-fire-and-fury-random-army-generation](plugins/fire-and-fury/skills/brigade-fire-and-fury-random-army-generation/SKILL.md) | Rolls random Brigade Fire and Fury 2nd Edition pickup-game armies, or takes a fixed historical roster, and prints 24 x 25 mm unit labels as a PDF with a CSV log of every roll. Random armies need the generator tables from your own rulebook. You photograph the pages and the agent builds and checks the tables. |
 | [reg-fire-and-fury-random-army-generation](plugins/fire-and-fury/skills/reg-fire-and-fury-random-army-generation/SKILL.md) | Rolls random Regimental Fire and Fury USA and CSA forces and prints 24 x 25 mm unit labels as a PDF with a CSV generation log. Its army-generation tables are original to this skill, so everything it needs ships with it. |
 
+### Career Workbench (`job-search` plugin)
+
+[Career Workbench](plugins/job-search/README.md) contains 23 connected career skills: guided background discovery, skills and evidence records, resumes, job reviews, application/outreach drafts, interview practice, and offer/negotiation preparation. It supports qualitative evidence, existing records and AI-guided setup. Start with its [setup prompt](plugins/job-search/START-HERE.md).
+
+Download the committed [complete repository-install bundle](bundles/career-workbench.zip). Install **all 23 sibling skill folders** together; individual folders may have dependencies. The archive is regenerated from the same release sources and CI rejects stale contents. It is not a single-skill web upload.
+
 ## Install
 
 ### Claude Code plugin marketplace
@@ -36,13 +42,14 @@ claude plugin marketplace add EvanMooreBI/agent-skills
 claude plugin install agent-workflow@evanmoorebi-agent-skills
 claude plugin install wargame-design@evanmoorebi-agent-skills
 claude plugin install fire-and-fury@evanmoorebi-agent-skills
+claude plugin install job-search@evanmoorebi-agent-skills
 ```
 
 Plugin skills are namespaced, for example `/agent-workflow:codex-plan-files`.
 
 ### Copy a skill folder
 
-Each skill is a self-contained folder under `plugins/<plugin>/skills/`. Copy the folder you want into the agent's skill folder:
+Skills live under `plugins/<plugin>/skills/`. For Career Workbench, copy **all 23** folders from `plugins/job-search/skills/` together into the chosen root below, preserving sibling names and notices. For the other plugins, copy the individual folder you want:
 
 | Agent | For you | For one project |
 |---|---|---|
@@ -55,7 +62,14 @@ Each skill checks its own requirements the first time it runs. When something is
 
 ### Claude Cowork and claude.ai
 
-Download a skill zip from the latest CI run, or build the zips with `./scripts/Build-SkillZips.ps1`. Then upload the zip under Skills in Claude's settings. Cowork can use the skills that are turned on there.
+Build upload ZIPs with `./scripts/Build-SkillZips.ps1 -Target portable`, then upload
+them under Skills in Claude's settings. Cowork can use the skills turned on there.
+The builder validates all inputs before creating archives and rejects Code-only
+fields without stripping them. The two Fire and Fury packages currently contain
+`effort`, and `claude-subagent-orchestration` uses a reserved upload name. The
+portable build is blocked until those packages are deliberately adapted for
+uploads. CI and the default `-Target repo` build produce Claude Code
+source ZIPs; those artifacts are not upload-certified. Career Workbench is distributed as its complete repository bundle instead of individual career ZIPs; do not upload that combined bundle as a single skill.
 
 ## Billing for Codex
 
@@ -82,6 +96,7 @@ Put your own copies in `~/.agent-skills/local/<skill-name>/<resource-id>/`, or s
 |---|---|
 | claude-subagent-orchestration | Claude Code, Python 3, a git repository, and the Codex CLI signed in to a ChatGPT plan, or to an OpenAI API key after you lock the computer to API billing |
 | codex-plan-files | Codex and Python 3.9 or later |
+| Career Workbench | All 23 sibling skills; host web/document capabilities as needed; authenticated Drive access only for selected cloud storage. No custom agent or consumer Python requirement. |
 | wargame-scenario-designer | No extra tools |
 | wargame-scenario-map-making | Python 3.9 or later for the validator, and an image or SVG tool for rendering |
 | brigade-fire-and-fury-random-army-generation and reg-fire-and-fury-random-army-generation | PowerShell 7, Node.js, Chrome, Chromium or Microsoft Edge, and Python with PyMuPDF. CI checks the PDFs on Windows. |
@@ -91,3 +106,7 @@ On Windows, some paths in this repository are up to 150 characters long. If a cl
 ## Contributing and license
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the layout, the local-resource rules, and the checks. Released under the [MIT License](LICENSE). See [NOTICE.md](NOTICE.md) for trademarks and third-party material.
+
+## Development and production
+
+Dev Center owns development, maintenance, provenance, tests and release tooling. This repository is the production output. Implement fixes in Dev Center and promote them through its publisher; do not maintain a separate source copy here. The publisher builds `bundles/career-workbench.zip` before validating and committing each release. `python tools/build_career_bundle.py --check` verifies its freshness.

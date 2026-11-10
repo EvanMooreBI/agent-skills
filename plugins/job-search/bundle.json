@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "name": "career-workbench",
+  "version": "1.0.0",
+  "assets": [
+    "README.md",
+    "START-HERE.md",
+    "NOTICE.md",
+    "provenance.json"
+  ],
+  "skills": [
+    {
+      "name": "application-form-filler",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "career-changer-translator",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "career-context-builder",
+      "requires": [
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "references/templates/career-index.md",
+        "references/templates/career-record.md",
+        "references/templates/evidence-index.md",
+        "references/templates/session-checkpoint.md",
+        "references/templates/skills-inventory.md"
+      ]
+    },
+    {
+      "name": "cold-email-writer",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "cover-letter-generator",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "creative-portfolio-resume",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "interview-prep-generator",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "job-description-analyzer",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "job-market-pay-research",
+      "requires": [
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "job-posting-review",
+      "requires": [
+        "career-context-builder",
+        "job-description-analyzer",
+        "job-market-pay-research"
+      ],
+      "files": [
+        "SKILL.md",
+        "references/posting-retrieval.md",
+        "references/requirement-audit.md",
+        "references/scoring-rules.md",
+        "references/setup-contract.md",
+        "references/validation-checks.md",
+        "references/workspace-contract.md",
+        "references/templates/application-log.md",
+        "references/templates/home-address.md",
+        "references/templates/preferences.md",
+        "references/templates/resume-catalog.md",
+        "references/templates/workspace.md"
+      ]
+    },
+    {
+      "name": "linkedin-profile-optimizer",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "offer-comparison-analyzer",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "portfolio-case-study-writer",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "reference-list-builder",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "resume-ats-optimizer",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "resume-bullet-writer",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "resume-formatter",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "resume-quantifier",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "resume-section-builder",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "resume-tailor",
+      "requires": [
+        "career-context-builder",
+        "job-description-analyzer",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "resume-version-manager",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review",
+        "resume-tailor"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "salary-negotiation-prep",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    },
+    {
+      "name": "tech-resume-optimizer",
+      "requires": [
+        "career-context-builder",
+        "job-posting-review"
+      ],
+      "files": [
+        "SKILL.md",
+        "NOTICE.md",
+        "LICENSES/ResumeSkills-MIT.txt"
+      ]
+    }
+  ],
+  "blankTemplateSha256": {
+    "skills/career-context-builder/references/templates/career-index.md": "3562267a3ba7482ff78049967e4259b8f405ca4c8e011842f7256c2426153fbf",
+    "skills/career-context-builder/references/templates/career-record.md": "829b281f19f8ce0a88480a4b7974df971de744bae439a4a858a782740436e2e1",
+    "skills/career-context-builder/references/templates/evidence-index.md": "e6e1f23797b1c083e890ee493f926cf65282b49ca4dc0b9d21651e3879b0eecb",
+    "skills/career-context-builder/references/templates/session-checkpoint.md": "464f71ce08fb523efc3d0f57388ddebf21363bf5e010d5ee7777c6cbcf92e9be",
+    "skills/career-context-builder/references/templates/skills-inventory.md": "d806b528b03ce1471670b122282b7fcea506e60ee5cfa5290626794e5a75ae43",
+    "skills/job-posting-review/references/templates/application-log.md": "03d3bbc1f1a0cb39d3169143ae09a6a31471282576f9cf74ea0d909a1229336e",
+    "skills/job-posting-review/references/templates/home-address.md": "f3915761308e36951fa10bdd27b0553f6141ca461182d961fa29fbd4580903d4",
+    "skills/job-posting-review/references/templates/preferences.md": "88927e79ecd2f22a720d8d612d12ce7f44600840bf43f1070d7a93517b537739",
+    "skills/job-posting-review/references/templates/resume-catalog.md": "e15a85751c1c8a353758cfe40650daf8825369a37fbbba78106e5eb0c37b73b1",
+    "skills/job-posting-review/references/templates/workspace.md": "b6ef546bb5edacb72927979eae67adf0b0f542abec68439114911321aa3b1b89"
+  },
+  "upstreamLicenseSha256": "779da7ca4855d53a7800c744fef206c6265ace2e1eefef8ab608a0ccfb6d751d"
+}
