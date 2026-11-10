@@ -1,0 +1,10 @@
+{
+  "name": "job-search",
+  "displayName": "Career Workbench",
+  "version": "1.0.0",
+  "description": "Build evidence-backed career context and use it across resumes, job applications, interviews and career decisions.",
+  "author": { "name": "Evan Moore", "url": "https://github.com/EvanMooreBI" },
+  "repository": "https://github.com/EvanMooreBI/agent-skills",
+  "license": "MIT",
+  "keywords": ["career", "job-search", "resume", "evidence", "interview"]
+}

@@ -1,6 +1,6 @@
 {
   "name": "evanmoorebi-agent-skills",
-  "description": "Agent skills for Claude Code and Codex: agent workflow and tabletop wargame design.",
+  "description": "Agent skills for Claude Code and Codex: agent workflow, tabletop wargames and Career Workbench.",
   "owner": {
     "name": "Evan Moore",
     "url": "https://github.com/EvanMooreBI"
@@ -20,6 +20,11 @@
       "name": "fire-and-fury",
       "source": "./plugins/fire-and-fury",
       "description": "Generate random Brigade and Regimental Fire and Fury armies with printable unit-label PDFs and auditable roll logs."
+    },
+    {
+      "name": "job-search",
+      "source": "./plugins/job-search",
+      "description": "Career Workbench: build grounded career context and use it across job reviews, resumes, applications, interviews and offers."
     }
   ]
 }

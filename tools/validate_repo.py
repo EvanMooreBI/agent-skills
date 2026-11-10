@@ -42,40 +42,17 @@ RESOURCE_KEYS = {"id": str, "purpose": str, "required": bool, "whenMissing": str
                  "howToObtain": str, "expectedFiles": list, "license": str}
 SKIP_DIRS = {".git", "dist", "__pycache__", "node_modules", ".worktrees"}
 SENSITIVE_NAME_RE = re.compile(r"^(\.env(\..*)?|.*\.(pem|key|p12|pfx)|id_(rsa|ed25519|ecdsa)(\.pub)?|credentials(\.json)?)$", re.I)
-# A plain (unquoted) YAML scalar cannot start with these or contain ": " or " #".
-PLAIN_SCALAR_BAD_START = tuple("[]{}&*!|>'\"%@`,#")
-
-try:
-    import yaml  # optional: full YAML syntax check when PyYAML is installed
-except ImportError:  # pragma: no cover
-    yaml = None
+from skill_frontmatter import parse_skill, validate_fields
+from build_career_bundle import ARCHIVE as CAREER_ARCHIVE, build as check_career_bundle
 
 
 def frontmatter_syntax_errors(text: str) -> list[str]:
-    """Return YAML syntax problems in the frontmatter block."""
-    lines = text.splitlines()
+    """Return strict YAML errors; parser availability is required for a pass."""
     try:
-        end = next(i for i, line in enumerate(lines[1:], start=1) if line.strip() == "---")
-    except StopIteration:
-        return ["frontmatter is not closed"]
-    block = "\n".join(lines[1:end])
-    if yaml is not None:
-        try:
-            data = yaml.safe_load(block)
-        except yaml.YAMLError as exc:
-            return [f"invalid YAML: {str(exc).splitlines()[0]}"]
-        return [] if isinstance(data, dict) else ["frontmatter is not a mapping"]
-    errors = []
-    for number, line in enumerate(lines[1:end], start=2):
-        if not line.strip() or line.lstrip().startswith("#"):
-            continue
-        _, sep, value = line.strip().partition(":")
-        value = value.strip()
-        if not sep or not value or value[0] in "\"'":
-            continue
-        if value.startswith(PLAIN_SCALAR_BAD_START) or ": " in value or " #" in value or value.endswith(":"):
-            errors.append(f"line {number}: quote this value; it is not a valid plain YAML scalar")
-    return errors
+        parse_skill(text)
+    except ValueError as exc:
+        return [str(exc)]
+    return []
 
 
 def files_under(root: Path):
@@ -85,55 +62,24 @@ def files_under(root: Path):
 
 
 def parse_frontmatter(text: str) -> dict | None:
-    lines = text.splitlines()
-    if not lines or lines[0].strip() != "---":
+    """Compatibility helper returning actual YAML values, not line fragments."""
+    try:
+        return parse_skill(text)[0]
+    except ValueError:
         return None
-    fields: dict = {}
-    parent = None
-    for line in lines[1:]:
-        if line.strip() == "---":
-            return fields
-        if not line.strip():
-            continue
-        indented = line.startswith((" ", "\t"))
-        key, sep, value = line.strip().partition(":")
-        if not sep:
-            continue
-        value = value.strip()
-        if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
-            value = value[1:-1]
-        if indented and parent is not None:
-            fields[parent][key.strip()] = value
-        elif not indented:
-            if value == "":
-                fields[key.strip()] = {}
-                parent = key.strip()
-            else:
-                fields[key.strip()] = value
-                parent = None
-    return None
 
 
-def check_skill(skill_dir: Path, rel, findings: list[str]) -> None:
+def check_skill(skill_dir: Path, rel, findings: list[str], target="repo") -> None:
     skill_md = skill_dir / "SKILL.md"
-    skill_text = skill_md.read_text(encoding="utf-8")
-    for error in frontmatter_syntax_errors(skill_text):
-        findings.append(f"{rel(skill_md)}: frontmatter {error}")
-    fm = parse_frontmatter(skill_text)
-    if fm is None:
-        findings.append(f"{rel(skill_md)}: missing or unclosed frontmatter")
+    try:
+        fm, body = parse_skill(skill_md.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, ValueError) as exc:
+        findings.append(f"{rel(skill_md)}: frontmatter {exc}")
         return
-    name = fm.get("name", "")
-    if not isinstance(name, str) or not NAME_RE.match(name) or len(name) > 64:
-        findings.append(f"{rel(skill_md)}: invalid name {name!r}")
-    elif name != skill_dir.name:
-        findings.append(f"{rel(skill_md)}: name {name!r} does not match folder {skill_dir.name!r}")
-    description = fm.get("description", "")
-    if not isinstance(description, str) or not 1 <= len(description) <= 1024:
-        findings.append(f"{rel(skill_md)}: description must be 1-1024 characters")
-    compatibility = fm.get("compatibility")
-    if compatibility is not None and (not isinstance(compatibility, str) or not 1 <= len(compatibility) <= 500):
-        findings.append(f"{rel(skill_md)}: compatibility must be 1-500 characters")
+    for error in validate_fields(fm, skill_dir.name, target):
+        findings.append(f"{rel(skill_md)}: {error}")
+    if not body:
+        findings.append(f"{rel(skill_md)}: SKILL.md body content is required")
     if fm.get("license") != "MIT":
         findings.append(f"{rel(skill_md)}: license must be MIT")
     metadata = fm.get("metadata")
@@ -222,7 +168,8 @@ def check_files(root: Path, rel, findings: list[str], private_hashes: dict[str, 
             findings.append(f"{rel(path)}: path is longer than {MAX_PATH_CHARS} characters")
         if SENSITIVE_NAME_RE.match(path.name):
             findings.append(f"{rel(path)}: looks like a secret or credential file")
-        if path.suffix.lower() in BLOCKED_SUFFIXES:
+        career_archive = rel(path) == CAREER_ARCHIVE and (root / "plugins/job-search/bundle.json").is_file()
+        if path.suffix.lower() in BLOCKED_SUFFIXES and not career_archive:
             findings.append(f"{rel(path)}: file type {path.suffix} is not allowed; declare it as a local resource")
         if private_hashes:
             digest = hashlib.sha256(path.read_bytes()).hexdigest()
@@ -259,6 +206,7 @@ def check_links(path: Path, text: str, root: Path, rel, findings: list[str]) -> 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--target", choices=["repo", "portable"], default="repo", help="repo permits Claude Code plugin fields; portable checks upload metadata")
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parent.parent)
     parser.add_argument("--private", type=Path, help="folder of restricted files that must not appear here")
     parser.add_argument("--deny-file", type=Path, help="file of extra regular expressions, one per line, that must not appear here")
@@ -289,8 +237,13 @@ def main(argv: list[str] | None = None) -> int:
 
     findings: list[str] = []
     for skill_dir in check_plugins(root, rel, findings):
-        check_skill(skill_dir, rel, findings)
+        check_skill(skill_dir, rel, findings, args.target)
     check_files(root, rel, findings, private_hashes, deny_patterns)
+    if (root / "plugins/job-search").exists():
+        try:
+            check_career_bundle(root, check=True)
+        except (OSError, UnicodeError, ValueError, KeyError, TypeError) as exc:
+            findings.append(f"Career Workbench bundle: {exc}")
     for finding in findings:
         print(finding)
     print(f"{len(findings)} finding(s)", file=sys.stderr)

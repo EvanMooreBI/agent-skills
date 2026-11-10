@@ -21,6 +21,10 @@ jobs:
         run: |
           python -m pip install --quiet pyyaml
           python tools/validate_repo.py
+      - name: Test skill metadata validation
+        run: python -m unittest discover -s tools/tests
+      - name: Verify committed Career Workbench archive
+        run: python tools/build_career_bundle.py --check
       - name: Test codex-plan-files
         run: python -m unittest discover -s plugins/agent-workflow/skills/codex-plan-files/scripts
       - name: Test claude-subagent-orchestration
@@ -91,9 +95,14 @@ jobs:
           node-version: "22"
       - name: Validate Claude Code marketplace
         run: npx --yes @anthropic-ai/claude-code plugin validate .
-      - name: Build skill zips
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install metadata parser
+        run: python -m pip install --quiet pyyaml
+      - name: Build Claude Code source zips
         shell: pwsh
-        run: ./scripts/Build-SkillZips.ps1
+        run: ./scripts/Build-SkillZips.ps1 -Target repo
       - uses: actions/upload-artifact@v7
         with:
           name: skill-zips
