@@ -199,6 +199,17 @@ class PackageTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "stay inside"):
             builder.build(self.root, self.root / "../escaped.zip")
 
+    def test_selected_root_alias_keeps_its_output_inside_the_same_root(self):
+        alias = self.root / "selected-root-alias"
+        try:
+            alias.symlink_to(self.root, target_is_directory=True)
+        except OSError as exc:
+            self.skipTest(f"Host cannot create a test root alias: {exc}")
+        output = builder.build(alias, alias / "alias.zip")
+        self.assertEqual(output, self.root.resolve() / "alias.zip")
+        builder.build(alias, alias / "alias.zip", check=True)
+        self.assertEqual(output.read_bytes(), builder.archive_bytes(self.root))
+
     def test_linked_archive_output_is_refused(self):
         outside = self.root / "outside-output"
         outside.mkdir()

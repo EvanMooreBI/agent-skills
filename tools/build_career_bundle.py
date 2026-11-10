@@ -169,22 +169,29 @@ def archive_bytes(root):
 
 
 def build(root=ROOT, output=None, check=False):
-    root = Path(root).resolve()
+    selected_root = Path(root).absolute()
+    root = selected_root.resolve()
     expected = archive_bytes(root)
-    output = Path(output) if output else root / ARCHIVE
+    output = Path(output).absolute() if output else root / ARCHIVE
     if output.suffix.lower() != ".zip":
         raise ValueError("Output must have the .zip extension")
-    if check:
-        actual = safe_source(root, ARCHIVE) if output == root / ARCHIVE else output
-        if not actual.is_file() or actual.read_bytes() != expected:
-            raise ValueError("Career Workbench archive is missing or stale; regenerate it from these sources")
-        return output
     try:
-        relative = output.absolute().relative_to(root)
-    except ValueError as exc:
-        raise ValueError("Archive output must stay inside the selected public root") from exc
+        relative = output.relative_to(selected_root)
+    except ValueError:
+        try:
+            relative = output.relative_to(root)
+        except ValueError as exc:
+            raise ValueError("Archive output must stay inside the selected public root") from exc
     if ".." in relative.parts:
         raise ValueError("Archive output must stay inside the selected public root")
+    # Normalize only the explicitly selected root alias (macOS /var, Windows 8.3).
+    # Do not resolve descendant links before the source/output guards inspect them.
+    output = root / relative
+    if check:
+        actual = safe_source(root, relative.as_posix())
+        if actual.read_bytes() != expected:
+            raise ValueError("Career Workbench archive is missing or stale; regenerate it from these sources")
+        return output
     cursor = root
     for part in relative.parts:
         cursor = cursor / part
